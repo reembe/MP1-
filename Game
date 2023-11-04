@@ -3,261 +3,86 @@ public class Game {
     private Person user;
     private Person date;
     private Person dateChris;
-
-
-    private String RESETTER = "\u001B[0m";
-
-
-    private String RED = "\u001B[31m";
-    private String GREEN = "\u001B[32m";
-    private String YELLOW = "\u001B[33m";
-    private String BLUE = "\u001B[34m";
-    private String CYAN = "\u001B[36m";
-    private String MAGENTA = "\u001B[35m";
-    private String WHITE = "\u001B[37m";
-    private String BLACK = "\u001B[30m";
-
-
-
-
-
-
-
-
-    private String RED_B = "\u001B[41m";
-    private String GREEN_B = "\u001B[42m";
-    private String YELLOW_B = "\u001B[43m";
-    private String BLUE_B = "\u001B[44m";
-    private String CYAN_B = "\u001B[46m";
-    final String MAGENTA_B = "\u001B[45m";
-    private String WHITE_B = "\u001B[47m";
-    private String BLACK_B = "\u001B[40m";
     private boolean menuOption = false;
     private boolean personOne = false;
     private boolean personTwo = false;
     private boolean personThree = false;
-    boolean anotherDate = false;
-    boolean guessFlags = false;
-    int red;
-    private Scanner s = new Scanner(System.in);
 
-
-
-    public void rfc() {
-        System.out.println("How many red flags have you spotted?");
-        String red1 = s.nextLine();
-        red = Integer.parseInt(red1);
-    }
-    public void game() {
-        askInfo();
-        selectDate();
-        newDate();
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
 
-    public void newDate(){
-        System.out.println("Would you like to go on another date?");
-        String answer = s.nextLine();
-        if (answer.equals("yes")){
-            anotherDate = true;
-            while (anotherDate){
-                selectDate();
-            }
-        }
-    }
-    public void selectDate() {
-        Scanner s = new Scanner(System.in);
+    public Game() {
+
+        boolean menuOption = false;
+        boolean personOne = false;
+        boolean personTwo = false;
+        boolean personThree = false;
+
+
+        String RESETTER = "\u001B[0m";
+
+        String RED = "\u001B[31m";
+        String GREEN = "\u001B[32m";
+        String YELLOW = "\u001B[33m";
+        String BLUE = "\u001B[34m";
+        String CYAN = "\u001B[36m";
+        String MAGENTA = "\u001B[35m";
+        String WHITE = "\u001B[37m";
+        String BLACK = "\u001B[30m";
+
+
+        String RED_B = "\u001B[41m";
+        String GREEN_B = "\u001B[42m";
+        String YELLOW_B = "\u001B[43m";
+        String BLUE_B = "\u001B[44m";
+        String CYAN_B = "\u001B[46m";
+        final String MAGENTA_B = "\u001B[45m";
+        String WHITE_B = "\u001B[47m";
+        String BLACK_B = "\u001B[40m";
+
+        System.out.println(RED + "██▀███   █    ██  ███▄    █  ▐██▌");
+        System.out.println("▓██ ▒ ██▒ ██  ▓██▒ ██ ▀█   █  ▐██▌");
+        System.out.println("▓██ ░▄█ ▒▓██  ▒██░▓██  ▀█ ██▒ ▐██▌");
+        System.out.println("▒██▀▀█▄  ▓▓█  ░██░▓██▒  ▐▌██▒ ▓██▒");
+        System.out.println("░██▓ ▒██▒▒▒█████▓ ▒██░   ▓██░ ▒▄▄");
+        System.out.println("░ ▒▓ ░▒▓░░▒▓▒ ▒ ▒ ░ ▒░   ▒ ▒  ░▀▀▒");
+        System.out.println("░▒ ░ ▒░░░▒░ ░ ░ ░ ░░   ░ ▒░ ░  ░");
+        System.out.println("░░   ░  ░░░ ░ ░    ░   ░ ░     ░");
+        System.out.println(" ░        ░              ░  ░" + RESETTER);
+
+
+
+
+                Scanner s = new Scanner(System.in);
         System.out.println(MAGENTA_B + BLACK + "Please Select Your Character: \n 1) Person 1 \n 2) Person 2 \n 3) Person 3 \n(enter the corresponding number)" + RESETTER);
         int choice = s.nextInt();
         if (choice == 1) {
+            System.out.print("1");
             menuOption = true;
-            String namezzz = "Charizztopher";
-            dateChris = new Person("Charizztopher", (namezzz.substring(3, 7)), 17, Integer.MIN_VALUE, "Blue", 0, 30, 0);
-            dwC();
+            personOne = true;
         } else if (choice == 2) {
+            System.out.print("2");
             menuOption = true;
-            date = new Person("Bartholomew", "Barty", 19, Integer.MAX_VALUE, "Brown", Integer.MAX_VALUE, 0, 0);
-            dateWithBartholomew();
+            personTwo = true;
         } else if (choice == 3) {
+            System.out.print("3");
             menuOption = true;
-            date = new Person("Gertrude", 20, 8, "Green", 20, 0);
+            personThree = true;
         } else {
-//clearScreen();
+            clearScreen();
             System.out.println(" ");
             System.out.println("Please enter a valid menu option!");
             System.out.println(" ");
-        }
-    }
 
-
-    public void askInfo() {
-        System.out.println("Welcome!");
-        System.out.println();
-        System.out.println("Hello! What is your name?");
-        Scanner s = new Scanner(System.in);
-        String name = s.nextLine();
-        System.out.println("Hello " + name + ". How old are you?");
-        int userAge = s.nextInt();
-        System.out.println("On a scale of 1-10, how charismatic are you?");
-        int rizz = s.nextInt();
-        if (rizz >= 10) {
-            System.out.println("Finally, someone worth our time!");
-        }
-
-
-        System.out.println("Ok now, what color are your eyes?");
-        String eyes = s.nextLine();
-        System.out.println("How much money do you have?");
-        String money1 = s.nextLine();
-        int money = Integer.parseInt(money1);
-        user = new Person(name, userAge, rizz, eyes, money, 0);
-    }
-    public void dateWithBartholomew() {
-// Pause p = new Pause();
-// p.pauseTime(2000);
-        System.out.println("\n Nice to meet you, " + user.getName() + ". My name is Bartholemew, but people call me Barty! Do you want to go on a museum date (1) or a restaurant date (2)?");
-// Pause p = new Pause();
-// p.pauseTime(10000);
-        date.addGreenFlag(1);
-        Scanner s = new Scanner(System.in);
-        String whichDate = s.nextLine();
-        if (whichDate.equals("1")) {
-            System.out.println("Wonderful, the museum is a great choice. And don't worry about the fees, enjoy your time. \nWould you like to get some food before we go?");
-            date.addGreenFlag(1);
-            String food = s.nextLine();
-            int groceries = 0;
-            if (food.equals("sure") || food.equals("yes")) {
-                System.out.println("Alright, I'll get us 2 sandwiches and 2 drinks");
-                groceries += 4;
-            } else {
-                System.out.println("Okay. I'll get something for myself; I'm a bit famished.");
-                groceries += 2;
-            }
-            System.out.println("Ok. I want a chicken parmesan wrap. $17, pretty cheap huh! \nAnd done!");
-            System.out.println("*Suddenly you hear the thunk of metal hit the floor, startling you*");
-            System.out.println("Oh my gosh, I'm so sorry, my American Express unlimited spending bank card can be quite loud.");
-            date.addGreenFlag(3);
-            groceries += 17;
-            System.out.println("Are you ready?");
-            String ready = s.nextLine();
-            if (ready.equals("yes")) {
-                System.out.println("Great, let's head out.");
-            } else {
-                s.nextLine();
-                System.out.println("I'll wait, take your time.");
-                date.addGreenFlag(1);
-            }
-            groceries = (int) (Math.round(groceries * 10) / 10);
-            System.out.println("\n The total is " + groceries + ". That's much less than I expected.");
-            date.addGreenFlag(2);
-            System.out.println("*You and Bart have arrived at the museum, and he pays for both of your entrance fees*");
-            System.out.println("So...do you have any favorite art piece you'd like to see?");
-            Scanner q = new Scanner(System.in);
-            String whichArt = s.nextLine();
-            System.out.println("Oh cool, that's such a significant art piece, i'd love to look at it with you. The " + whichArt + ".");
-            System.out.println("*You and Bart go to your art piece and as the day goes on, you fall more and more in love with him*");
-            System.out.println("*You and Bart finish the night on a high note. \n He gives you a warm hug (WITH CONSENT) and asks you \n \"Can I see you again beautiful\"");
-            String response = s.nextLine();
-            if (response.equalsIgnoreCase("yes")) {
-                System.out.println("Bart smiles warmly and suggests another date to the aquarium. The evening ends and he sends you home in an Uber lux with a bouquet of fresh flowers.");
-            } else if (response.equalsIgnoreCase("no")) {
-                {
-                    System.out.println("I understand. It was lovely meeting you. Take care.");
-                    System.out.println("Bart smiles warmly and sends you home in an Uber lux.");
-                }
-
-
-            }
-
-
-
-
-        } if (whichDate.equals("2")) {
-            System.out.println("A restaurant date it is! I've heard there's a lovely Italian restaurant nearby. Would you like to go there?");
-            String resturantDate = s.nextLine();
-            if (resturantDate.equals("yes")) {
-                System.out.println("*You walk there and once seated, Barty starts a conversation about your favorite Italian dishes.*");
-                System.out.println("*Throughout the meal, Bart continues to be charming and engaging, making the date enjoyable.*");
-                System.out.println("*After a delightful dinner, Barty insists on covering the bill.*");
-                System.out.println("It was a pleasure spending this evening with you. Can I see you again?");
-                String response = s.nextLine();
-                if (response.equalsIgnoreCase("yes")) {
-                    System.out.println("Bart smiles warmly and suggests another date to the aquarium. The evening ends and he sends you home in an Uber lux with a bouquet of fresh flowers.");
-                } else {
-                    System.out.println("I understand. It was lovely meeting you. Take care.");
-                    System.out.println("Bart smiles warmly and sends you home in an Uber lux.");
-
-
-                }
-            } else {
-                System.out.println("No worries! We can choose another restaurant or activity. We can decide that next time we meet. Have a great night beautiful.");
-            }
-        }
-    }
-    public void dwC() {
-        System.out.println("Nice to meet you, " + user.getName() + ". My name is Charizztopher, but people call me " + dateChris.getName().substring(3,7) + "! Do you want to go on a picnic date(1) or an amusement park date(2)?");
-        dateChris.addRedFlag(1);
-        Scanner date = new Scanner(System.in);
-        String choice = date.nextLine();
-        if (choice.equals("1")) {
-            System.out.println("Let's go to the grocery store then! I only have " + dateChris.getMoney() + " dollars though, so you can pay the rest of what I can't lol. \nDo you want Arizona?");
-            dateChris.addRedFlag(1);
-            String ari = date.nextLine();
-            if (ari.equals("yes")) {
-                System.out.print("Okay, I'll get 2 for me and 1 for you.");
-                dateChris.addGroceries(3);
-            } else {
-                System.out.println("Okay. I'll get 2 for myself then.");
-                dateChris.addGroceries(2);
-            }
-            System.out.println("\nI want lunchables, which is only 10 dollars! What a steal! \n\nooooh I want some chocolates, but it's 50 dollars omg. \nYou wouldn't mind paying, right? Lol, why am I even asking? Of course, you wouldn't mind.");
-            dateChris.addRedFlag(3);
-            dateChris.addGroceries(10+50);
-            System.out.println("Do we need any more food?");
-            String needs = date.nextLine();
-            if (needs.equals("no")) {
-                System.out.println("Ok fire! Let's go pay now!, you got the bill right?");
-            } else {
-                System.out.println("What other food do we need?");
-                date.nextLine();
-                System.out.println("Are you really going to eat all that? \nYeah, we are not getting that. Let's go pay now.");
-                dateChris.addRedFlag(1);
-            }
-            double lol = dateChris.total();
-            lol *= 1.18;
-
-
-            System.out.println("The total is " + lol + ". Thanks for paying for us babe! \nI had a feeling you were a generous person when I met you!");
-            dateChris.addRedFlag(1);
-            System.out.println("\n*You and Rizz arrive at the park and sit down at your pre-prepared picnic setting. You guys eat for 50 minutes*\n");
-            System.out.println("Soooo..... I weigh 250 lb. How much do you weigh?");
-            dateChris.addRedFlag(1);
-            int weight = date.nextInt();
-            if (weight > 100) {
-                System.out.println("oh.");
-                System.out.println("*Gets up, packs his things and leaves* \n Bye fatty, I'll text you my gym location before I block you.");
-                dateChris.addRedFlag(1);
-            } else {
-                System.out.println("Ok cutie patoots! I'll call you later pook.");
-                dateChris.addRedFlag(2);
-            }
-
-
-        } else if (choice.equals("2")) {
 
         }
-        System.out.println("Congratulations! You have survived your date! Now its time for the entire purpose of the game!!!!!");
-        rfc();
-        if (red == dateChris.printFlag()) {
-            guessFlags = true;
-            System.out.println("That's the correct number of red flags!");
-        }else{
-
-            while (!guessFlags){
-                System.out.println("That's wrong. Try again!");
-                rfc();
-            }
-        }
-
     }
 }
+
+
+
+
+
