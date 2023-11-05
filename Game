@@ -1,17 +1,36 @@
 import java.util.Scanner;
-public class Game {
-    private Person user;
-    private Person date;
-    private Person dateChris;
-    private boolean menuOption = false;
-    private boolean personOne = false;
-    private boolean personTwo = false;
-    private boolean personThree = false;
+import java.util.InputMismatchException;
 
-    public static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+public class Game {
+
+    public int menuTry()
+    {
+        final String RESETTER = "\u001B[0m";
+        final String RED = "\u001B[31m";
+        Clear c = new Clear();
+        Pause pa = new Pause();
+        Scanner s = new Scanner(System.in);
+        boolean works = true;
+        int choice = 0;
+            try
+        {
+            choice = s.nextInt();
+        }
+            catch (InputMismatchException e)
+        {
+            c.clearScreen();
+            System.out.println(RED + "Please insert a number only." + RESETTER);
+            pa.pauseTime(2000);
+            works = false;
+            
+        }
+        if (works)
+        {
+            return choice;
+        }
+        return -1;
     }
+
 
 
     public Game() {
@@ -21,64 +40,128 @@ public class Game {
         boolean personTwo = false;
         boolean personThree = false;
 
-
-        String RESETTER = "\u001B[0m";
-
-        String RED = "\u001B[31m";
-        String GREEN = "\u001B[32m";
-        String YELLOW = "\u001B[33m";
-        String BLUE = "\u001B[34m";
-        String CYAN = "\u001B[36m";
-        String MAGENTA = "\u001B[35m";
-        String WHITE = "\u001B[37m";
-        String BLACK = "\u001B[30m";
+        Date d = new Date();
 
 
-        String RED_B = "\u001B[41m";
-        String GREEN_B = "\u001B[42m";
-        String YELLOW_B = "\u001B[43m";
-        String BLUE_B = "\u001B[44m";
-        String CYAN_B = "\u001B[46m";
+        final String RESETTER = "\u001B[0m";
+
+        final String RED = "\u001B[31m";
+        final String GREEN = "\u001B[32m";
+        final String YELLOW = "\u001B[33m";
+        final String BLUE = "\u001B[34m";
+        final String CYAN = "\u001B[36m";
+        final String MAGENTA = "\u001B[35m";
+        final String WHITE = "\u001B[37m";
+        final String BLACK = "\u001B[30m";
+
+
+        final String RED_B = "\u001B[41m";
+        final String GREEN_B = "\u001B[42m";
+        final String YELLOW_B = "\u001B[43m";
+        final String BLUE_B = "\u001B[44m";
+        final String CYAN_B = "\u001B[46m";
         final String MAGENTA_B = "\u001B[45m";
-        String WHITE_B = "\u001B[47m";
-        String BLACK_B = "\u001B[40m";
-
-        System.out.println(RED + "██▀███   █    ██  ███▄    █  ▐██▌");
-        System.out.println("▓██ ▒ ██▒ ██  ▓██▒ ██ ▀█   █  ▐██▌");
-        System.out.println("▓██ ░▄█ ▒▓██  ▒██░▓██  ▀█ ██▒ ▐██▌");
-        System.out.println("▒██▀▀█▄  ▓▓█  ░██░▓██▒  ▐▌██▒ ▓██▒");
-        System.out.println("░██▓ ▒██▒▒▒█████▓ ▒██░   ▓██░ ▒▄▄");
-        System.out.println("░ ▒▓ ░▒▓░░▒▓▒ ▒ ▒ ░ ▒░   ▒ ▒  ░▀▀▒");
-        System.out.println("░▒ ░ ▒░░░▒░ ░ ░ ░ ░░   ░ ▒░ ░  ░");
-        System.out.println("░░   ░  ░░░ ░ ░    ░   ░ ░     ░");
-        System.out.println(" ░        ░              ░  ░" + RESETTER);
+        final String WHITE_B = "\u001B[47m";
+        final String BLACK_B = "\u001B[40m";
 
 
+        Scanner s = new Scanner(System.in);
+        Pause pa = new Pause();
+        Clear c = new Clear();
 
+        while (!menuOption) {
+                System.out.println(RED + "███▀███   █    ██  ███▄    █  ▐██▌");
+                System.out.println("▓██ ▒ ██▒ ██  ▓██▒ ██ ▀█   █  ▐██▌");
+                System.out.println("▓██ ░▄█ ▒▓██  ▒██░▓██  ▀█ ██▒ ▐██▌");
+                System.out.println("▒██▀▀█▄  ▓▓█  ░██░▓██▒  ▐▌██▒ ▓██▒");
+                System.out.println("░██▓ ▒██▒▒▒█████▓ ▒██░   ▓██░ ▒▄▄");
+                System.out.println("░ ▒▓ ░▒▓░░▒▓▒ ▒ ▒ ░ ▒░   ▒ ▒  ░▀▀▒");
+                System.out.println("░▒ ░ ▒░░░▒░ ░ ░ ░ ░░   ░ ▒░ ░  ░");
+                System.out.println("░░   ░  ░░░ ░ ░    ░   ░ ░     ░");
+                System.out.println(" ░        ░              ░  ░" + RESETTER);
+                System.out.println("  ");
 
-                Scanner s = new Scanner(System.in);
-        System.out.println(MAGENTA_B + BLACK + "Please Select Your Character: \n 1) Person 1 \n 2) Person 2 \n 3) Person 3 \n(enter the corresponding number)" + RESETTER);
-        int choice = s.nextInt();
-        if (choice == 1) {
-            System.out.print("1");
-            menuOption = true;
-            personOne = true;
-        } else if (choice == 2) {
-            System.out.print("2");
-            menuOption = true;
-            personTwo = true;
-        } else if (choice == 3) {
-            System.out.print("3");
-            menuOption = true;
-            personThree = true;
-        } else {
-            clearScreen();
-            System.out.println(" ");
-            System.out.println("Please enter a valid menu option!");
-            System.out.println(" ");
+            System.out.println("Please Select Your Storyline:");
+            System.out.println(BLUE + " 1) Charizztopher" + RESETTER); 
+            System.out.println(GREEN + " 2) Bertholomew" + RESETTER);
+            System.out.println(MAGENTA + " 3) Gertrude" + RESETTER); 
+            System.out.println(YELLOW + " 4) Quit Game" + RESETTER);
+            System.out.println("(enter the corresponding number)");
+            System.out.println("  ");
+            int choice = menuTry();
 
+        
+            if (choice == 1) {
+                System.out.print("1");
+                menuOption = true;
+                personOne = true;
+            } else if (choice == 2) {
+                System.out.print("2");
+                menuOption = true;
+                personTwo = true;
+            } else if (choice == 3) {
+                System.out.print("3");
+                menuOption = true;
+                personThree = true;
+            } else if (choice == -1){
+                c.clearScreen();
+            } else if (choice == 4){
+                menuOption = true;
+            } else {
+                c.clearScreen();
+                System.out.println(" ");
+                System.out.println(RED + "Please enter a valid menu option!" + RESETTER);
+                pa.pauseTime(2000);
+                System.out.println(" ");
+                c.clearScreen();
+            }
+        }
+
+        c.clearScreen();
+
+        while (personOne)
+        {
+            d.askInfo();
+            d.dwC();
+              
+        }
+        while (personTwo)
+        {
+            d.askInfo();
+            d.dateWithBartholomew();
 
         }
+         while (personThree)
+        {
+            d.askInfo();
+            d.dwG();
+
+        }
+
+
+        System.out.println(" ");
+ 
+    System.out.println(RED + "▄▄▄█████▓ ██░ ██  ▄▄▄      ███▄    █  ██ ▄█▀  ██████      █████▒▒█████   ██▀███      ██▓███   ██▓    ▄▄▄     ▓██   ██▓ ██▓ ███▄    █   ▄████ ");
+    System.out.println("▓  ██▒ ▓▒▓██░ ██▒▒████▄    ██ ▀█   █  ██▄█▒ ▒██    ▒    ▓██   ▒▒██▒  ██▒▓██ ▒ ██▒   ▓██░  ██▒▓██▒   ▒████▄    ▒██  ██▒▓██▒ ██ ▀█   █  ██▒ ▀█▒");
+    System.out.println("▒ ▓██░ ▒░▒██▀▀██░▒██  ▀█▄ ▓██  ▀█ ██▒▓███▄░ ░ ▓██▄      ▒████ ░▒██░  ██▒▓██ ░▄█ ▒   ▓██░ ██▓▒▒██░   ▒██  ▀█▄   ▒██ ██░▒██▒▓██  ▀█ ██▒▒██░▄▄▄░");
+    System.out.println("░ ▓██▓ ░ ░▓█ ░██ ░██▄▄▄▄██▓██▒  ▐▌██▒▓██ █▄   ▒   ██▒   ░▓█▒  ░▒██   ██░▒██▀▀█▄     ▒██▄█▓▒ ▒▒██░   ░██▄▄▄▄██  ░ ▐██▓░░██░▓██▒  ▐▌██▒░▓█  ██▓");
+    System.out.println("  ▒██▒ ░ ░▓█▒░██▓ ▓█   ▓██▒██░   ▓██░▒██▒ █▄▒██████▒▒   ░▒█░   ░ ████▓▒░░██▓ ▒██▒   ▒██▒ ░  ░░██████▒▓█   ▓██▒ ░ ██▒▓░░██░▒██░   ▓██░░▒▓███▀▒");
+    System.out.println(" ▒  ░░    ▒ ░░▒░▒ ▒▒   ▓▒█░ ▒░   ▒ ▒ ▒ ▒▒ ▓▒▒ ▒▓▒ ▒ ░    ▒ ░   ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░   ▒▓▒░ ░  ░░ ▒░▓  ░▒▒   ▓▒█░  ██▒▒▒ ░▓  ░ ▒░   ▒ ▒  ░▒   ▒ ");
+    System.out.println("    ░     ▒ ░▒░ ░  ▒   ▒▒ ░ ░░   ░ ▒░░ ░▒ ▒░░ ░▒  ░ ░    ░       ░ ▒ ▒░   ░▒ ░ ▒░   ░▒ ░     ░ ░ ▒  ░ ▒   ▒▒ ░▓██ ░▒░  ▒ ░░ ░░   ░ ▒░  ░   ░ ");
+    System.out.println(" ░       ░  ░░ ░  ░   ▒     ░   ░ ░ ░ ░░ ░ ░  ░  ░      ░ ░   ░ ░ ░ ▒    ░░   ░    ░░         ░ ░    ░   ▒   ▒ ▒ ░░   ▒ ░   ░   ░ ░ ░ ░   ░ ");
+     System.out.println("        ░  ░  ░      ░  ░        ░ ░██▀███   █  ░ ██  ███▄    █  ▐██▌    ░                     ░  ░     ░  ░░ ░      ░           ░       ░ ");
+    System.out.println("                                   ▓██ ▒ ██▒ ██  ▓██▒ ██ ▀█   █  ▐██▌                                       ░ ░                            ");
+     System.out.println("                                   ▓██ ░▄█ ▒▓██  ▒██░▓██  ▀█ ██▒ ▐██▌                                                                      ");
+     System.out.println("                                   ▒██▀▀█▄  ▓▓█  ░██░▓██▒  ▐▌██▒ ▓██▒                                                                      ");
+    System.out.println("                                   ░██▓ ▒██▒▒▒█████▓ ▒██░   ▓██░ ▒▄▄                                                                       ");
+    System.out.println("                                   ░ ▒▓ ░▒▓░░▒▓▒ ▒ ▒ ░ ▒░   ▒ ▒  ░▀▀▒                                                                      ");
+    System.out.println("                                    ░▒ ░ ▒░░░▒░ ░ ░ ░ ░░   ░ ▒░ ░  ░                                                                      ");
+    System.out.println("                                   ░░   ░  ░░░ ░ ░    ░   ░ ░     ░                                                                      ");
+    System.out.println("                                     ░        ░              ░  ░                                                                         "+ RESETTER);
+
+    System.exit(000);
+                                                                                                                                             
+
     }
 }
 
