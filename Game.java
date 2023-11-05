@@ -12,17 +12,17 @@ public class Game {
         Scanner s = new Scanner(System.in);
         boolean works = true;
         int choice = 0;
-            try
+        try
         {
             choice = s.nextInt();
         }
-            catch (InputMismatchException e)
+        catch (InputMismatchException e)
         {
             c.clearScreen();
             System.out.println(RED + "Please insert a number only." + RESETTER);
             pa.pauseTime(2000);
             works = false;
-            
+
         }
         if (works)
         {
@@ -70,37 +70,34 @@ public class Game {
         Clear c = new Clear();
 
         while (!menuOption) {
-                System.out.println(RED + "███▀███   █    ██  ███▄    █  ▐██▌");
-                System.out.println("▓██ ▒ ██▒ ██  ▓██▒ ██ ▀█   █  ▐██▌");
-                System.out.println("▓██ ░▄█ ▒▓██  ▒██░▓██  ▀█ ██▒ ▐██▌");
-                System.out.println("▒██▀▀█▄  ▓▓█  ░██░▓██▒  ▐▌██▒ ▓██▒");
-                System.out.println("░██▓ ▒██▒▒▒█████▓ ▒██░   ▓██░ ▒▄▄");
-                System.out.println("░ ▒▓ ░▒▓░░▒▓▒ ▒ ▒ ░ ▒░   ▒ ▒  ░▀▀▒");
-                System.out.println("░▒ ░ ▒░░░▒░ ░ ░ ░ ░░   ░ ▒░ ░  ░");
-                System.out.println("░░   ░  ░░░ ░ ░    ░   ░ ░     ░");
-                System.out.println(" ░        ░              ░  ░" + RESETTER);
-                System.out.println("  ");
+            System.out.println(RED + "███▀███   █    ██  ███▄    █  ▐██▌");
+            System.out.println("▓██ ▒ ██▒ ██  ▓██▒ ██ ▀█   █  ▐██▌");
+            System.out.println("▓██ ░▄█ ▒▓██  ▒██░▓██  ▀█ ██▒ ▐██▌");
+            System.out.println("▒██▀▀█▄  ▓▓█  ░██░▓██▒  ▐▌██▒ ▓██▒");
+            System.out.println("░██▓ ▒██▒▒▒█████▓ ▒██░   ▓██░ ▒▄▄");
+            System.out.println("░ ▒▓ ░▒▓░░▒▓▒ ▒ ▒ ░ ▒░   ▒ ▒  ░▀▀▒");
+            System.out.println("░▒ ░ ▒░░░▒░ ░ ░ ░ ░░   ░ ▒░ ░  ░");
+            System.out.println("░░   ░  ░░░ ░ ░    ░   ░ ░     ░");
+            System.out.println(" ░        ░              ░  ░" + RESETTER);
+            System.out.println("  ");
 
             System.out.println("Please Select Your Storyline:");
-            System.out.println(BLUE + " 1) Charizztopher" + RESETTER); 
+            System.out.println(BLUE + " 1) Charizztopher" + RESETTER);
             System.out.println(GREEN + " 2) Bertholomew" + RESETTER);
-            System.out.println(MAGENTA + " 3) Gertrude" + RESETTER); 
+            System.out.println(MAGENTA + " 3) Gertrude" + RESETTER);
             System.out.println(YELLOW + " 4) Quit Game" + RESETTER);
             System.out.println("(enter the corresponding number)");
             System.out.println("  ");
             int choice = menuTry();
 
-        
+
             if (choice == 1) {
-                System.out.print("1");
                 menuOption = true;
                 personOne = true;
             } else if (choice == 2) {
-                System.out.print("2");
                 menuOption = true;
                 personTwo = true;
             } else if (choice == 3) {
-                System.out.print("3");
                 menuOption = true;
                 personThree = true;
             } else if (choice == -1){
@@ -123,7 +120,7 @@ public class Game {
         {
             d.askInfo();
             d.dwC();
-              
+
         }
         while (personTwo)
         {
@@ -131,7 +128,7 @@ public class Game {
             d.dateWithBartholomew();
 
         }
-         while (personThree)
+        while (personThree)
         {
             d.askInfo();
             d.dwG();
@@ -140,32 +137,27 @@ public class Game {
 
 
         System.out.println(" ");
- 
-    System.out.println(RED + "▄▄▄█████▓ ██░ ██  ▄▄▄      ███▄    █  ██ ▄█▀  ██████      █████▒▒█████   ██▀███      ██▓███   ██▓    ▄▄▄     ▓██   ██▓ ██▓ ███▄    █   ▄████ ");
-    System.out.println("▓  ██▒ ▓▒▓██░ ██▒▒████▄    ██ ▀█   █  ██▄█▒ ▒██    ▒    ▓██   ▒▒██▒  ██▒▓██ ▒ ██▒   ▓██░  ██▒▓██▒   ▒████▄    ▒██  ██▒▓██▒ ██ ▀█   █  ██▒ ▀█▒");
-    System.out.println("▒ ▓██░ ▒░▒██▀▀██░▒██  ▀█▄ ▓██  ▀█ ██▒▓███▄░ ░ ▓██▄      ▒████ ░▒██░  ██▒▓██ ░▄█ ▒   ▓██░ ██▓▒▒██░   ▒██  ▀█▄   ▒██ ██░▒██▒▓██  ▀█ ██▒▒██░▄▄▄░");
-    System.out.println("░ ▓██▓ ░ ░▓█ ░██ ░██▄▄▄▄██▓██▒  ▐▌██▒▓██ █▄   ▒   ██▒   ░▓█▒  ░▒██   ██░▒██▀▀█▄     ▒██▄█▓▒ ▒▒██░   ░██▄▄▄▄██  ░ ▐██▓░░██░▓██▒  ▐▌██▒░▓█  ██▓");
-    System.out.println("  ▒██▒ ░ ░▓█▒░██▓ ▓█   ▓██▒██░   ▓██░▒██▒ █▄▒██████▒▒   ░▒█░   ░ ████▓▒░░██▓ ▒██▒   ▒██▒ ░  ░░██████▒▓█   ▓██▒ ░ ██▒▓░░██░▒██░   ▓██░░▒▓███▀▒");
-    System.out.println(" ▒  ░░    ▒ ░░▒░▒ ▒▒   ▓▒█░ ▒░   ▒ ▒ ▒ ▒▒ ▓▒▒ ▒▓▒ ▒ ░    ▒ ░   ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░   ▒▓▒░ ░  ░░ ▒░▓  ░▒▒   ▓▒█░  ██▒▒▒ ░▓  ░ ▒░   ▒ ▒  ░▒   ▒ ");
-    System.out.println("    ░     ▒ ░▒░ ░  ▒   ▒▒ ░ ░░   ░ ▒░░ ░▒ ▒░░ ░▒  ░ ░    ░       ░ ▒ ▒░   ░▒ ░ ▒░   ░▒ ░     ░ ░ ▒  ░ ▒   ▒▒ ░▓██ ░▒░  ▒ ░░ ░░   ░ ▒░  ░   ░ ");
-    System.out.println(" ░       ░  ░░ ░  ░   ▒     ░   ░ ░ ░ ░░ ░ ░  ░  ░      ░ ░   ░ ░ ░ ▒    ░░   ░    ░░         ░ ░    ░   ▒   ▒ ▒ ░░   ▒ ░   ░   ░ ░ ░ ░   ░ ");
-     System.out.println("        ░  ░  ░      ░  ░        ░ ░██▀███   █  ░ ██  ███▄    █  ▐██▌    ░                     ░  ░     ░  ░░ ░      ░           ░       ░ ");
-    System.out.println("                                   ▓██ ▒ ██▒ ██  ▓██▒ ██ ▀█   █  ▐██▌                                       ░ ░                            ");
-     System.out.println("                                   ▓██ ░▄█ ▒▓██  ▒██░▓██  ▀█ ██▒ ▐██▌                                                                      ");
-     System.out.println("                                   ▒██▀▀█▄  ▓▓█  ░██░▓██▒  ▐▌██▒ ▓██▒                                                                      ");
-    System.out.println("                                   ░██▓ ▒██▒▒▒█████▓ ▒██░   ▓██░ ▒▄▄                                                                       ");
-    System.out.println("                                   ░ ▒▓ ░▒▓░░▒▓▒ ▒ ▒ ░ ▒░   ▒ ▒  ░▀▀▒                                                                      ");
-    System.out.println("                                    ░▒ ░ ▒░░░▒░ ░ ░ ░ ░░   ░ ▒░ ░  ░                                                                      ");
-    System.out.println("                                   ░░   ░  ░░░ ░ ░    ░   ░ ░     ░                                                                      ");
-    System.out.println("                                     ░        ░              ░  ░                                                                         "+ RESETTER);
 
-    System.exit(000);
-                                                                                                                                             
+        System.out.println(RED + "▄▄▄█████▓ ██░ ██  ▄▄▄      ███▄    █  ██ ▄█▀  ██████      █████▒▒█████   ██▀███      ██▓███   ██▓    ▄▄▄     ▓██   ██▓ ██▓ ███▄    █   ▄████ ");
+        System.out.println("▓  ██▒ ▓▒▓██░ ██▒▒████▄    ██ ▀█   █  ██▄█▒ ▒██    ▒    ▓██   ▒▒██▒  ██▒▓██ ▒ ██▒   ▓██░  ██▒▓██▒   ▒████▄    ▒██  ██▒▓██▒ ██ ▀█   █  ██▒ ▀█▒");
+        System.out.println("▒ ▓██░ ▒░▒██▀▀██░▒██  ▀█▄ ▓██  ▀█ ██▒▓███▄░ ░ ▓██▄      ▒████ ░▒██░  ██▒▓██ ░▄█ ▒   ▓██░ ██▓▒▒██░   ▒██  ▀█▄   ▒██ ██░▒██▒▓██  ▀█ ██▒▒██░▄▄▄░");
+        System.out.println("░ ▓██▓ ░ ░▓█ ░██ ░██▄▄▄▄██▓██▒  ▐▌██▒▓██ █▄   ▒   ██▒   ░▓█▒  ░▒██   ██░▒██▀▀█▄     ▒██▄█▓▒ ▒▒██░   ░██▄▄▄▄██  ░ ▐██▓░░██░▓██▒  ▐▌██▒░▓█  ██▓");
+        System.out.println("  ▒██▒ ░ ░▓█▒░██▓ ▓█   ▓██▒██░   ▓██░▒██▒ █▄▒██████▒▒   ░▒█░   ░ ████▓▒░░██▓ ▒██▒   ▒██▒ ░  ░░██████▒▓█   ▓██▒ ░ ██▒▓░░██░▒██░   ▓██░░▒▓███▀▒");
+        System.out.println(" ▒  ░░    ▒ ░░▒░▒ ▒▒   ▓▒█░ ▒░   ▒ ▒ ▒ ▒▒ ▓▒▒ ▒▓▒ ▒ ░    ▒ ░   ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░   ▒▓▒░ ░  ░░ ▒░▓  ░▒▒   ▓▒█░  ██▒▒▒ ░▓  ░ ▒░   ▒ ▒  ░▒   ▒ ");
+        System.out.println("    ░     ▒ ░▒░ ░  ▒   ▒▒ ░ ░░   ░ ▒░░ ░▒ ▒░░ ░▒  ░ ░    ░       ░ ▒ ▒░   ░▒ ░ ▒░   ░▒ ░     ░ ░ ▒  ░ ▒   ▒▒ ░▓██ ░▒░  ▒ ░░ ░░   ░ ▒░  ░   ░ ");
+        System.out.println(" ░       ░  ░░ ░  ░   ▒     ░   ░ ░ ░ ░░ ░ ░  ░  ░      ░ ░   ░ ░ ░ ▒    ░░   ░    ░░         ░ ░    ░   ▒   ▒ ▒ ░░   ▒ ░   ░   ░ ░ ░ ░   ░ ");
+        System.out.println("        ░  ░  ░      ░  ░        ░ ░██▀███   █  ░ ██  ███▄    █  ▐██▌    ░                     ░  ░     ░  ░░ ░      ░           ░       ░ ");
+        System.out.println("                                   ▓██ ▒ ██▒ ██  ▓██▒ ██ ▀█   █  ▐██▌                                       ░ ░                            ");
+        System.out.println("                                   ▓██ ░▄█ ▒▓██  ▒██░▓██  ▀█ ██▒ ▐██▌                                                                      ");
+        System.out.println("                                   ▒██▀▀█▄  ▓▓█  ░██░▓██▒  ▐▌██▒ ▓██▒                                                                      ");
+        System.out.println("                                   ░██▓ ▒██▒▒▒█████▓ ▒██░   ▓██░ ▒▄▄                                                                       ");
+        System.out.println("                                   ░ ▒▓ ░▒▓░░▒▓▒ ▒ ▒ ░ ▒░   ▒ ▒  ░▀▀▒                                                                      ");
+        System.out.println("                                    ░▒ ░ ▒░░░▒░ ░ ░ ░ ░░   ░ ▒░ ░  ░                                                                      ");
+        System.out.println("                                   ░░   ░  ░░░ ░ ░    ░   ░ ░     ░                                                                      ");
+        System.out.println("                                     ░        ░              ░  ░                                                                         "+ RESETTER);
+
+        System.exit(000);
+
 
     }
 }
-
-
-
-
-
