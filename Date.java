@@ -222,7 +222,7 @@ public class Date {
             System.out.println("\nI want lunchables, which is only 10 dollars! What a steal! \n\nooooh I want some chocolates, but it's 50 dollars omg. \nYou wouldn't mind paying, right? \n\nLol, why am I even asking? Of course, you wouldn't mind.");
             dateChris.addRedFlag(3);
             dateChris.addGroceries(10 + 50);
-            pa.pauseTime(1500);
+            pa.pauseTime(3000);
             c.clearScreen();
             System.out.println("Do we need any more food?");
             String needs = date.nextLine();
