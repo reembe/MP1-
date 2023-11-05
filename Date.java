@@ -33,6 +33,12 @@ public class Date {
     boolean anotherDate = false;
     boolean guessFlags = false;
 
+    public void printObject()
+    {
+        System.out.print(dateChris);
+    }
+
+
     public int rfc() {
         System.out.println("How many red flags have you spotted?");
         int red = s.nextInt();
