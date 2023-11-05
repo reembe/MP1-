@@ -332,9 +332,14 @@ public class Date {
 
         }
     }
-    public void dwG() {
+public void dwG() {
+        if(user.getAge() < 18)
+        {
+            System.out.println("Oh, I didn't know you were " + user.getAge() + ", its ok though, age is just a number.");
+            dGertrude.addRedFlag(1);
+        }
         Pause  pa = new Pause();
-        date.introduce();//this isn't working
+        dGertrude.introduce();
         Scanner s = new Scanner(System.in);
         System.out.println("Hey where do you want to go eat? Applebee's or Olive Garden, im a little short on money.");
         dGertrude.addRedFlag(1);
@@ -378,18 +383,12 @@ public class Date {
                     dGertrude.addRedFlag(1);
                     break;
                 default:
-                    System.out.println("I think you'll get the salad. Looks like you need that");
+                    System.out.println("I think you'll get the salad. Looks like you need that.");
                     dGertrude.addRedFlag(1);
             }
-        }
-
-
-
-        String food = s.nextLine();
-        switch(food.toUpperCase()){
-            case "A":
-
-        }
+            }
+        System.out.println("I'll get whatever is most expensive.");
+        dGertrude.addRedFlag(1);
         System.out.println("*After the food has arrived*");
         pa.pauseTime(1500);
         System.out.println("So, let's talk about me. I'm amazing. What do you think about me?");
@@ -418,8 +417,9 @@ public class Date {
                 pa.pauseTime(1500);
                 dGertrude.addRedFlag(1);
         }
+
         System.out.println(" ");
-        System.out.println("Sorry, can we make this quick. I have another date in 3 hours.");
+        System.out.println("Sorry, can we make this quick. I have another date in 2 hours.");
         pa.pauseTime(1500);
         dGertrude.addRedFlag(1);
         System.out.println("(A) Excuse me?. (B) Me too!");
