@@ -263,61 +263,78 @@ public class Date {
             pa.pauseTime(2000);
             System.out.println("\n*He comes back 30 minutes later eating a burger.*");
             dateChris.addRedFlag(3);
-            System.out.println("This is such a good burger oh my god.\n*He sees you staring at the burger*\nLOL girl stop staring ur burning holes in my food");
+            System.out.println("\nThis is such a good burger oh my god.\n*He sees you staring at the burger*\n\nLOL girl stop staring ur burning holes in my food");
             dateChris.addRedFlag(3);
             pa.pauseTime(2000);
-            System.out.println("*you finally reach your turn and ride the roller coaster... but the whole time, Rizz is clutching onto your arm and screaming in your ear.*");
+            System.out.println("\n*you finally reach your turn and ride the roller coaster... but the whole time, Rizz is clutching onto your arm and screaming in your ear.*");
             dateChris.addRedFlag(2);
-            System.out.println("Bruh that was the least scary roller coaster I've ever ridden. It was literally pathetic tbh.");        
+            pa.pauseTime(2000);
+            System.out.println("Bruh that was the least scary roller coaster I've ever ridden. It was literally pathetic tbh.");
             dateChris.addRedFlag(2);
-            System.out.println("\n\n*Decide if you want to call him out or not (yes or no)");
+            System.out.println("\n*Decide if you want to call him out or not (yes or no)");
             String callOut = s.nextLine();
-            if (callOut.equals("yes")){
+            if (callOut.equals("yes")) {
                 System.out.println("*You tell him that he was screaming the whole time*");
                 System.out.println("Am I not allowed to yell because I'm a man? what kind of sexist b**** did I agree to go on a date with omg. Anyways. i just saw my high school sweet heart so I'm gonna go talk to her and actually have a good time.");
                 dateChris.addRedFlag(3);
-            } else{
+            } else {
                 System.out.println("Go stand on line I'm going to go to the bathroom.");
+                pa.pauseTime(2000);
                 dateChris.addRedFlag(2);
-                System.out.println("Heyy I'm back and look who I found along the way. " + user.getName()+ " meet my high school sweet heart pookie Angelina!");
-                System.out.println("*You (1) spit in his face and storm off, ending the date, or (2) say hi and keep the date going");
-                if (s.nextLine().equals("1")){
+                System.out.println("Heyy I'm back and look who I found along the way. " + user.getName() + " meet my high school sweet heart pookie Clarizza!");
+                dateChris.addRedFlag(2);
+                System.out.println("\n*You (1) spit in his face and storm off, ending the date, or (2) say hi and keep the date going*");
+                if (s.nextLine().equals("1")) {
                     System.out.println("*The date is now over*");
-                } else{
-                    
+                } else {
+                    System.out.println("Let's go get food\n*all three of you go up to a food cart*");
+                    dateChris.addRedFlag(1);
+                    System.out.println("Soooo..... I weigh 250 lb. How much do you weigh?");
+                    dateChris.addRedFlag(1);
+                    int weight = date.nextInt();
+                    if (weight > 100) {
+                        c.clearScreen();
+                        System.out.println("oh.");
+                        System.out.println("*Gets up, packs his things and leaves with Clarizza* \n Bye fatty, I'm gonna go have fun with my bae");
+                        dateChris.addRedFlag(1);
+                    } else {
+                        c.clearScreen();
+                        System.out.println("Ok cutie patoots! I'll call you later pookie wookie.");
+                        dateChris.addRedFlag(2);
+                    }
                 }
+
             }
-            
-        }
 
 
-        c.clearScreen();
-        System.out.println("Congratulations! You have survived your date! \nNow its time for the entire purpose of the game!!!!!\n");
-        int red = rfc();
-        System.out.println(dateChris.printFlag());
-        if (red == dateChris.printFlag()) {
             c.clearScreen();
-            guessFlags = true;
-            System.out.println("That's the correct number of red flags!");
-            newDate();
-        } else {
-            while (!guessFlags) {
+            System.out.println("Congratulations! You have survived your date! \nNow its time for the entire purpose of the game!!!!!\n");
+            int red = rfc();
+            System.out.println(dateChris.printFlag());//delete this for the final code
+            if (red == dateChris.printFlag()) {
                 c.clearScreen();
-                System.out.println("That's wrong. Try again!");
-                red = rfc();
-                if (red == dateChris.printFlag()) {
+                guessFlags = true;
+                System.out.println("That's the correct number of red flags!");
+                newDate();
+            } else {
+                while (!guessFlags) {
                     c.clearScreen();
-                    guessFlags = true;
-                    System.out.println("That's the correct number of red flags!");
-                    newDate();
+                    System.out.println("That's wrong. Try again!");
+                    red = rfc();
+                    if (red == dateChris.printFlag()) {
+                        c.clearScreen();
+                        guessFlags = true;
+                        System.out.println("That's the correct number of red flags!");
+                        newDate();
+                    }
                 }
             }
-        }
 
+        }
     }
     public void dwG() {
         Pause  pa = new Pause();
-        date.introduce();
+        date.introduce();//this isn't working
         Scanner s = new Scanner(System.in);
         System.out.println("Hey where do you want to go eat? Applebee's or Olive Garden, im a little short on money.");
         dGertrude.addRedFlag(1);
