@@ -289,45 +289,105 @@ public class Date {
         }
 
     }
-
-    public void dwG() {
-
+public void dwG() {
+    Pause  pa = new Pause();
         date.introduce();
         Scanner s = new Scanner(System.in);
-        System.out.println("Welcome to Date Night Decision Maker!");
-        System.out.print("Enter 'A' for Applebee's or 'O' for Olive Garden: ");
+        System.out.println("Hey where do you want to go eat? Applebee's or Olive Garden, im a little short on money.");
+        dGertrude.addRedFlag(1);
+        pa.pauseTime(1500);
+        System.out.print("(A) for Applebee's or (O) for Olive Garden: ");
         String choice = s.nextLine();
-        if (choice.equalsIgnoreCase("A")) {
-            System.out.println("Great choice! Let's go to Applebee's and have some delicious food!");
-        } else if (choice.equalsIgnoreCase("O")) {
-            System.out.println("Olive Garden it is! We'll enjoy a lovely Italian dinner.");
-        } else {
-            System.out.println("Invalid choice. Please enter 'A' for Applebee's or 'O' for Olive Garden.");
+        switch (choice.toUpperCase()) {
+            case "A":
+                System.out.println("Isn't Applebee's for kids... whatever lets go.");
+                dGertrude.addRedFlag(1);
+
+                break;
+            case "O":
+                System.out.println("Olive Garden it is! I love me a cheap Italian dinner.");
+                dGertrude.addRedFlag(1);
+                break;
+            default:
+                System.out.println("Ugh so indecisive...I'll pick Olive Garden then, since you cant decide.");
+                dGertrude.addRedFlag(1);
+                break;
+        }
+        if (choice.equals("A")) {
+            System.out.println("So what do you want to eat?");
+            System.out.println("(A) a salad (B) Sirloin steak (C) Chicken Tenders");
+        }
+        else{
+            System.out.println("So what do you want to eat?");
+            System.out.println("(A) House Salad (B) Never Ending Pasta (C) Herb-Grilled Salmon ");
+            switch (choice.toUpperCase()) {
+                case "A":
+                    System.out.println("Good choice, seems like you need it.");
+                    dGertrude.addRedFlag(1);
+                    break;
+                case "B":
+                    System.out.println("You're going to eat all of that?!");
+                    dGertrude.addRedFlag(1);
+                    break;
+                case "C":
+                    System.out.println("You chose Herb-Grilled Salmon.");
+                    System.out.println("You're paying the whole bill if you want to spend 30 dollars on that...");
+                    dGertrude.addRedFlag(1);
+                    break;
+                default:
+                    System.out.println("I think you'll get the salad. Looks like you need that");
+                    dGertrude.addRedFlag(1);
+            }
+            }
+
+
+
+        String food = s.nextLine();
+        switch(food.toUpperCase()){
+            case "A":
+
         }
         System.out.println("*After the food has arrived*");
+        pa.pauseTime(1500);
         System.out.println("So, let's talk about me. I'm amazing. What do you think about me?");
+        pa.pauseTime(1500);
         dGertrude.addRedFlag(1);
         System.out.println("(A) You are amazing....ly annoying. (B) I've always wanted to meet someone who's humble enough to admit that. (C) You seem like a nice person.");
+        pa.pauseTime(1500);
         String amz = s.nextLine();
-        if (amz.equalsIgnoreCase("A")) {
-            System.out.println("Of course small minded people would say that.");
-            dGertrude.addRedFlag(1);
-        } else if (amz.equalsIgnoreCase("B")) {
-            System.out.println("I know right, I'm such a humble and kind person.");
-            dGertrude.addRedFlag(1);
-        } else {
-            System.out.println("Omg, thank youu!!");
+        switch (amz.toUpperCase()) {
+            case "A":
+                System.out.println("Of course small-minded people would say that.");
+                pa.pauseTime(1500);
+                dGertrude.addRedFlag(1);
+                break;
+            case "B":
+                System.out.println("I know right, I'm such a humble and kind person.");
+                pa.pauseTime(1500);
+                dGertrude.addRedFlag(1);
+                break;
+            case "C":
+                System.out.println("Omg, thank youu!!");
+                pa.pauseTime(1500);
+                break;
+            default:
+                System.out.println("*Ignores what you said*");
+                pa.pauseTime(1500);
+                dGertrude.addRedFlag(1);
         }
         System.out.println(" ");
         System.out.println("Sorry, can we make this quick. I have another date in 3 hours.");
+        pa.pauseTime(1500);
         dGertrude.addRedFlag(1);
         System.out.println("(A) Excuse me?. (B) Me too!");
         String yn = s.nextLine();
         if (yn.equalsIgnoreCase("A")) {
             System.out.println("Damn, sorry, can you not take a joke? Just ignore what I said...");
+            pa.pauseTime(1500);
             dGertrude.addRedFlag(1);
         } else if (yn.equalsIgnoreCase("B")) {
             System.out.println("Umm.. What did you just say? You can't be doing that to me??");
+            pa.pauseTime(1500);
             dGertrude.addRedFlag(1);
 
         }
