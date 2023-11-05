@@ -5,7 +5,7 @@ public class Date {
     private Person user;
     private Person date = new Person("Bartholemew", "Barty", 19, 100, "Brown", 2000, 0, 0);
     private Person dateChris = new Person("Charizztopher", "Charizz", 17,0, "Blue", 50, 10.0, 0);
-    private Person dGertrude = new Person("Gertrude", 21, 6, "green", 20, 0 );
+    private Person dGertrude ;//someone initialize her info pls idk what her info is.
 
     private String RESETTER = "\u001B[0m";
 
@@ -99,7 +99,6 @@ public class Date {
         c.clearScreen();
         System.out.println("On a scale of 1-10, how charismatic are you?");
         int rizz = s.nextInt();
-        s.nextLine();
         if (rizz >= 10) {
             System.out.println("Finally, someone worth our time!");
             pa.pauseTime(1500);
@@ -307,7 +306,7 @@ public class Date {
 
             }
 
-
+        }
             c.clearScreen();
             System.out.println("Congratulations! You have survived your date! \nNow its time for the entire purpose of the game!!!!!\n");
             int red = rfc();
@@ -332,8 +331,8 @@ public class Date {
             }
 
         }
-    }
-public void dwG() {
+    
+    public void dwG() {
         if(user.getAge() < 18)
         {
             System.out.println("Oh, I didn't know you were " + user.getAge() + ", its ok though, age is just a number.");
@@ -387,7 +386,7 @@ public void dwG() {
                     System.out.println("I think you'll get the salad. Looks like you need that.");
                     dGertrude.addRedFlag(1);
             }
-            }
+        }
         System.out.println("I'll get whatever is most expensive.");
         dGertrude.addRedFlag(1);
         System.out.println("*After the food has arrived*");
