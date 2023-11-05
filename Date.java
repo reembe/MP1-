@@ -5,7 +5,7 @@ public class Date {
     private Person user;
     private Person date = new Person("Bartholemew", "Barty", 19, 100, "Brown", 2000, 0, 0);
     private Person dateChris = new Person("Charizztopher", "Charizz", 17,0, "Blue", 50, 10.0, 0);
-    private Person dGertrude ;//someone initialize her info pls idk what her info is.
+    private Person dGertrude = new Person("Gertrude", 21, 6, "green", 20, 0 );
 
     private String RESETTER = "\u001B[0m";
 
