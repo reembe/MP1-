@@ -4,7 +4,7 @@ public class Date {
 
     private Person user;
     private Person date;
-    private Person dateChris;
+    private Person dateChris = new Person("Charizztopher", "Charizz", 17, 0, "Brown", 50, 10.0, 0);
     private Person dGertrude;
 
     private String RESETTER = "\u001B[0m";
@@ -33,46 +33,80 @@ public class Date {
     boolean anotherDate = false;
     boolean guessFlags = false;
 
-    public void rfc() {
+    public int rfc() {
         System.out.println("How many red flags have you spotted?");
-        String red1 = s.nextLine();
-        red = Integer.parseInt(red1);
+        int red = s.nextInt();
+        return red;
     }
 
 
     public void newDate() {
+        Clear c = new Clear();
+        c.clearScreen();
+        Scanner s = new Scanner(System.in);
         System.out.println("Would you like to go on another date?");
         String answer = s.nextLine();
         if (answer.equals("yes")) {
+            c.clearScreen();
             anotherDate = true;
             while (anotherDate) {
                 Game g = new Game();
+                anotherDate = false;
             }
+        }
+        else{
+            c.clearScreen();
+            System.out.println(" ");
+            System.out.println(RED + "▄▄▄█████▓ ██░ ██  ▄▄▄      ███▄    █  ██ ▄█▀  ██████      █████▒▒█████   ██▀███      ██▓███   ██▓    ▄▄▄     ▓██   ██▓ ██▓ ███▄    █   ▄████ ");
+            System.out.println("▓  ██▒ ▓▒▓██░ ██▒▒████▄    ██ ▀█   █  ██▄█▒ ▒██    ▒    ▓██   ▒▒██▒  ██▒▓██ ▒ ██▒   ▓██░  ██▒▓██▒   ▒████▄    ▒██  ██▒▓██▒ ██ ▀█   █  ██▒ ▀█▒");
+            System.out.println("▒ ▓██░ ▒░▒██▀▀██░▒██  ▀█▄ ▓██  ▀█ ██▒▓███▄░ ░ ▓██▄      ▒████ ░▒██░  ██▒▓██ ░▄█ ▒   ▓██░ ██▓▒▒██░   ▒██  ▀█▄   ▒██ ██░▒██▒▓██  ▀█ ██▒▒██░▄▄▄░");
+            System.out.println("░ ▓██▓ ░ ░▓█ ░██ ░██▄▄▄▄██▓██▒  ▐▌██▒▓██ █▄   ▒   ██▒   ░▓█▒  ░▒██   ██░▒██▀▀█▄     ▒██▄█▓▒ ▒▒██░   ░██▄▄▄▄██  ░ ▐██▓░░██░▓██▒  ▐▌██▒░▓█  ██▓");
+            System.out.println("  ▒██▒ ░ ░▓█▒░██▓ ▓█   ▓██▒██░   ▓██░▒██▒ █▄▒██████▒▒   ░▒█░   ░ ████▓▒░░██▓ ▒██▒   ▒██▒ ░  ░░██████▒▓█   ▓██▒ ░ ██▒▓░░██░▒██░   ▓██░░▒▓███▀▒");
+            System.out.println(" ▒  ░░    ▒ ░░▒░▒ ▒▒   ▓▒█░ ▒░   ▒ ▒ ▒ ▒▒ ▓▒▒ ▒▓▒ ▒ ░    ▒ ░   ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░   ▒▓▒░ ░  ░░ ▒░▓  ░▒▒   ▓▒█░  ██▒▒▒ ░▓  ░ ▒░   ▒ ▒  ░▒   ▒ ");
+            System.out.println("    ░     ▒ ░▒░ ░  ▒   ▒▒ ░ ░░   ░ ▒░░ ░▒ ▒░░ ░▒  ░ ░    ░       ░ ▒ ▒░   ░▒ ░ ▒░   ░▒ ░     ░ ░ ▒  ░ ▒   ▒▒ ░▓██ ░▒░  ▒ ░░ ░░   ░ ▒░  ░   ░ ");
+            System.out.println(" ░       ░  ░░ ░  ░   ▒     ░   ░ ░ ░ ░░ ░ ░  ░  ░      ░ ░   ░ ░ ░ ▒    ░░   ░    ░░         ░ ░    ░   ▒   ▒ ▒ ░░   ▒ ░   ░   ░ ░ ░ ░   ░ ");
+             System.out.println("        ░  ░  ░      ░  ░        ░ ░██▀███   █  ░ ██  ███▄    █  ▐██▌    ░                     ░  ░     ░  ░░ ░      ░           ░       ░ ");
+            System.out.println("                                   ▓██ ▒ ██▒ ██  ▓██▒ ██ ▀█   █  ▐██▌                                       ░ ░                            ");
+             System.out.println("                                   ▓██ ░▄█ ▒▓██  ▒██░▓██  ▀█ ██▒ ▐██▌                                                                      ");
+             System.out.println("                                   ▒██▀▀█▄  ▓▓█  ░██░▓██▒  ▐▌██▒ ▓██▒                                                                      ");
+            System.out.println("                                   ░██▓ ▒██▒▒▒█████▓ ▒██░   ▓██░ ▒▄▄                                                                       ");
+            System.out.println("                                   ░ ▒▓ ░▒▓░░▒▓▒ ▒ ▒ ░ ▒░   ▒ ▒  ░▀▀▒                                                                      ");
+            System.out.println("                                    ░▒ ░ ▒░░░▒░ ░ ░ ░ ░░   ░ ▒░ ░  ░                                                                      ");
+            System.out.println("                                   ░░   ░  ░░░ ░ ░    ░   ░ ░     ░                                                                      ");
+            System.out.println("                                     ░        ░              ░  ░                                                                         "+ RESETTER);
+            System.exit(000);                                                                                                                       
+        
         }
     }
 
 
     public void askInfo() {
+        Pause pa = new Pause();
+        Clear c = new Clear();
         System.out.println("Welcome!");
-        System.out.println();
+        System.out.println("  ");
         System.out.println("Hello! What is your name?");
         Scanner s = new Scanner(System.in);
         String name = s.nextLine();
+        c.clearScreen();
         System.out.println("Hello " + name + ". How old are you?");
         int userAge = s.nextInt();
+        c.clearScreen();
         System.out.println("On a scale of 1-10, how charismatic are you?");
         int rizz = s.nextInt();
         if (rizz >= 10) {
             System.out.println("Finally, someone worth our time!");
+            pa.pauseTime(1500);
+            c.clearScreen();
         }
-
-
         System.out.println("Ok now, what color are your eyes?");
         String eyes = s.nextLine();
+        c.clearScreen();
         System.out.println("How much money do you have?");
         String money1 = s.nextLine();
         int money = Integer.parseInt(money1);
         user = new Person(name, userAge, rizz, eyes, money, 0);
+        c.clearScreen();
     }
 
     public void dateWithBartholomew() {
@@ -124,7 +158,7 @@ public class Date {
             } else if (response.equalsIgnoreCase("no")) {
                 {
                     System.out.println("I understand. It was lovely meeting you. Take care.");
-                    System.out.println("Bart smiles warmly and sends you home in an Uber lux.");
+                    System.out.println("*Bart smiles warmly and sends you home in an Uber lux.*");
                 }
 
 
@@ -156,38 +190,51 @@ public class Date {
     }
 
     public void dwC() {
-        System.out.println("Nice to meet you, " + user.getName() + ". My name is Charizztopher, but people call me " + dateChris.getName().substring(3, 7) + "! Do you want to go on a picnic date(1) or an amusement park date(2)?");
+        Pause pa = new Pause();
+        Clear c = new Clear();
+        c.clearScreen();
+        System.out.println("Nice to meet you, " + user.getName() + ". My name is Charizztopher, but people call me " + dateChris.getName().substring(3, 7) + "\n! Do you want to go on a picnic date(1) or an amusement park date(2)?");
         dateChris.addRedFlag(1);
         Scanner date = new Scanner(System.in);
         String choice = date.nextLine();
+        c.clearScreen();
         if (choice.equals("1")) {
-            System.out.println("Let's go to the grocery store then! I only have " + dateChris.getMoney() + " dollars though, so you can pay the rest of what I can't lol. \nDo you want Arizona?");
+            System.out.println("Let's go to the grocery store then! I only have " + dateChris.getMoney() + " dollars though, so you can pay the rest of what I can't lol. \n\nDo you want Arizona?");
             dateChris.addRedFlag(1);
             String ari = date.nextLine();
             if (ari.equals("yes")) {
+                c.clearScreen();
                 System.out.print("Okay, I'll get 2 for me and 1 for you.");
                 dateChris.addGroceries(3);
             } else {
+                c.clearScreen();
                 System.out.println("Okay. I'll get 2 for myself then.");
                 dateChris.addGroceries(2);
             }
-            System.out.println("\nI want lunchables, which is only 10 dollars! What a steal! \n\nooooh I want some chocolates, but it's 50 dollars omg. \nYou wouldn't mind paying, right? Lol, why am I even asking? Of course, you wouldn't mind.");
+            pa.pauseTime(1500);
+            c.clearScreen();
+            System.out.println("\nI want lunchables, which is only 10 dollars! What a steal! \n\nooooh I want some chocolates, but it's 50 dollars omg. \nYou wouldn't mind paying, right? \n\nLol, why am I even asking? Of course, you wouldn't mind.");
             dateChris.addRedFlag(3);
             dateChris.addGroceries(10 + 50);
+            pa.pauseTime(1500);
+            c.clearScreen();
             System.out.println("Do we need any more food?");
             String needs = date.nextLine();
             if (needs.equals("no")) {
+                c.clearScreen();
                 System.out.println("Ok fire! Let's go pay now!, you got the bill right?");
             } else {
+                c.clearScreen();
                 System.out.println("What other food do we need?");
                 date.nextLine();
+                c.clearScreen();
                 System.out.println("Are you really going to eat all that? \nYeah, we are not getting that. Let's go pay now.");
                 dateChris.addRedFlag(1);
             }
             double lol = dateChris.total();
             lol *= 1.18;
-
-
+            pa.pauseTime(1500);
+            c.clearScreen();
             System.out.println("The total is " + lol + ". Thanks for paying for us babe! \nI had a feeling you were a generous person when I met you!");
             dateChris.addRedFlag(1);
             System.out.println("\n*You and Rizz arrive at the park and sit down at your pre-prepared picnic setting. You guys eat for 50 minutes*\n");
@@ -195,28 +242,43 @@ public class Date {
             dateChris.addRedFlag(1);
             int weight = date.nextInt();
             if (weight > 100) {
+                c.clearScreen();
                 System.out.println("oh.");
                 System.out.println("*Gets up, packs his things and leaves* \n Bye fatty, I'll text you my gym location before I block you.");
                 dateChris.addRedFlag(1);
             } else {
+                c.clearScreen();
                 System.out.println("Ok cutie patoots! I'll call you later pook.");
                 dateChris.addRedFlag(2);
             }
+            pa.pauseTime(1500);
 
 
         } else if (choice.equals("2")) {
 
         }
-        System.out.println("Congratulations! You have survived your date! Now its time for the entire purpose of the game!!!!!");
-        rfc();
+
+
+        c.clearScreen();
+        System.out.println("Congratulations! You have survived your date! \nNow its time for the entire purpose of the game!!!!!");
+        int red = rfc();
+        System.out.println(dateChris.printFlag());
         if (red == dateChris.printFlag()) {
+            c.clearScreen();
             guessFlags = true;
             System.out.println("That's the correct number of red flags!");
+            newDate();
         } else {
-
             while (!guessFlags) {
+                c.clearScreen();
                 System.out.println("That's wrong. Try again!");
-                rfc();
+                red = rfc();
+                if (red == dateChris.printFlag()) {
+                guessFlags = true;
+                System.out.println("That's the correct number of red flags!");
+                newDate();
+                c.clearScreen();
+                }
             }
         }
 
