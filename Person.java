@@ -43,9 +43,15 @@ public class Person
         greenFlags = f;
     }
 
-    public void introduce() {
-        System.out.println("Hi, My name is " + name + ".\nI am " + age   + " years old.");
-        System.out.println("I think my charisma level is " + charisma + ".\nMy eyes are " + eyeColor + ".");
+   public void introduce() {
+        Pause pa = new Pause();
+        System.out.println("Hi, My name is " + name + ".");
+        pa.pauseTime(1500);
+        System.out.println("I am " + age + " years old.");
+        pa.pauseTime(1500);
+        System.out.println("I think my charisma level is " + charisma + ".");
+        pa.pauseTime(1500);
+        System.out.println("My eyes are " + eyeColor + ".");
     }
 
     public String getName()
