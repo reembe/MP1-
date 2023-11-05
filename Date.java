@@ -331,7 +331,7 @@ public class Date {
             }
 
         }
-    
+
     public void dwG() {
         if(user.getAge() < 18)
         {
