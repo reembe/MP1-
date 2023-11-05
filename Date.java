@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Date {
 
     private Person user;
-    private Person date;
-    private Person dateChris = new Person("Charizztopher", "Charizz", 17, 0, "Brown", 50, 10.0, 0);
-    private Person dGertrude;
+    private Person date = new Person("Bartholemew", "Barty", 19, 100, "Brown", 2000, 0, 0);
+    private Person dateChris = new Person("Charizztopher", "Charizz", 17,0, "Blue", 50, 10.0, 0);
+    private Person dGertrude ;//someone initialize her info pls idk what her info is.
 
     private String RESETTER = "\u001B[0m";
 
@@ -41,8 +41,7 @@ public class Date {
 
     public int rfc() {
         System.out.println("How many red flags have you spotted?");
-        int red = s.nextInt();
-        return red;
+        return s.nextInt();
     }
 
 
@@ -71,17 +70,17 @@ public class Date {
             System.out.println(" ▒  ░░    ▒ ░░▒░▒ ▒▒   ▓▒█░ ▒░   ▒ ▒ ▒ ▒▒ ▓▒▒ ▒▓▒ ▒ ░    ▒ ░   ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░   ▒▓▒░ ░  ░░ ▒░▓  ░▒▒   ▓▒█░  ██▒▒▒ ░▓  ░ ▒░   ▒ ▒  ░▒   ▒ ");
             System.out.println("    ░     ▒ ░▒░ ░  ▒   ▒▒ ░ ░░   ░ ▒░░ ░▒ ▒░░ ░▒  ░ ░    ░       ░ ▒ ▒░   ░▒ ░ ▒░   ░▒ ░     ░ ░ ▒  ░ ▒   ▒▒ ░▓██ ░▒░  ▒ ░░ ░░   ░ ▒░  ░   ░ ");
             System.out.println(" ░       ░  ░░ ░  ░   ▒     ░   ░ ░ ░ ░░ ░ ░  ░  ░      ░ ░   ░ ░ ░ ▒    ░░   ░    ░░         ░ ░    ░   ▒   ▒ ▒ ░░   ▒ ░   ░   ░ ░ ░ ░   ░ ");
-             System.out.println("        ░  ░  ░      ░  ░        ░ ░██▀███   █  ░ ██  ███▄    █  ▐██▌    ░                     ░  ░     ░  ░░ ░      ░           ░       ░ ");
+            System.out.println("        ░  ░  ░      ░  ░        ░ ░██▀███   █  ░ ██  ███▄    █  ▐██▌    ░                     ░  ░     ░  ░░ ░      ░           ░       ░ ");
             System.out.println("                                   ▓██ ▒ ██▒ ██  ▓██▒ ██ ▀█   █  ▐██▌                                       ░ ░                            ");
-             System.out.println("                                   ▓██ ░▄█ ▒▓██  ▒██░▓██  ▀█ ██▒ ▐██▌                                                                      ");
-             System.out.println("                                   ▒██▀▀█▄  ▓▓█  ░██░▓██▒  ▐▌██▒ ▓██▒                                                                      ");
+            System.out.println("                                   ▓██ ░▄█ ▒▓██  ▒██░▓██  ▀█ ██▒ ▐██▌                                                                      ");
+            System.out.println("                                   ▒██▀▀█▄  ▓▓█  ░██░▓██▒  ▐▌██▒ ▓██▒                                                                      ");
             System.out.println("                                   ░██▓ ▒██▒▒▒█████▓ ▒██░   ▓██░ ▒▄▄                                                                       ");
             System.out.println("                                   ░ ▒▓ ░▒▓░░▒▓▒ ▒ ▒ ░ ▒░   ▒ ▒  ░▀▀▒                                                                      ");
             System.out.println("                                    ░▒ ░ ▒░░░▒░ ░ ░ ░ ░░   ░ ▒░ ░  ░                                                                      ");
             System.out.println("                                   ░░   ░  ░░░ ░ ░    ░   ░ ░     ░                                                                      ");
             System.out.println("                                     ░        ░              ░  ░                                                                         "+ RESETTER);
-            System.exit(000);                                                                                                                       
-        
+            System.exit(000);
+
         }
     }
 
@@ -109,8 +108,7 @@ public class Date {
         String eyes = s.nextLine();
         c.clearScreen();
         System.out.println("How much money do you have?");
-        String money1 = s.nextLine();
-        int money = Integer.parseInt(money1);
+        int money = s.nextInt();
         user = new Person(name, userAge, rizz, eyes, money, 0);
         c.clearScreen();
     }
@@ -199,7 +197,7 @@ public class Date {
         Pause pa = new Pause();
         Clear c = new Clear();
         c.clearScreen();
-        System.out.println("Nice to meet you, " + user.getName() + ". My name is Charizztopher, but people call me " + dateChris.getName().substring(3, 7) + "\n! Do you want to go on a picnic date(1) or an amusement park date(2)?");
+        System.out.println("Nice to meet you, " + user.getName() + ". My name is Charizztopher, but people call me " + dateChris.getName().substring(3, 7) + "! \nDo you want to go on a picnic date(1) or an amusement park date(2)?");
         dateChris.addRedFlag(1);
         Scanner date = new Scanner(System.in);
         String choice = date.nextLine();
@@ -261,12 +259,40 @@ public class Date {
 
 
         } else if (choice.equals("2")) {
-
+            System.out.println("Let's go stand on line for the biggest roller coaster!\nGee this line is pretty long. Im going to step away for a sec if you dont mind");
+            pa.pauseTime(2000);
+            System.out.println("\n*He comes back 30 minutes later eating a burger.*");
+            dateChris.addRedFlag(3);
+            System.out.println("This is such a good burger oh my god.\n*He sees you staring at the burger*\nLOL girl stop staring ur burning holes in my food");
+            dateChris.addRedFlag(3);
+            pa.pauseTime(2000);
+            System.out.println("*you finally reach your turn and ride the roller coaster... but the whole time, Rizz is clutching onto your arm and screaming in your ear.*");
+            dateChris.addRedFlag(2);
+            System.out.println("Bruh that was the least scary roller coaster I've ever ridden. It was literally pathetic tbh.");        
+            dateChris.addRedFlag(2);
+            System.out.println("\n\n*Decide if you want to call him out or not (yes or no)");
+            String callOut = s.nextLine();
+            if (callOut.equals("yes")){
+                System.out.println("*You tell him that he was screaming the whole time*");
+                System.out.println("Am I not allowed to yell because I'm a man? what kind of sexist b**** did I agree to go on a date with omg. Anyways. i just saw my high school sweet heart so I'm gonna go talk to her and actually have a good time.");
+                dateChris.addRedFlag(3);
+            } else{
+                System.out.println("Go stand on line I'm going to go to the bathroom.");
+                dateChris.addRedFlag(2);
+                System.out.println("Heyy I'm back and look who I found along the way. " + user.getName()+ " meet my high school sweet heart pookie Angelina!");
+                System.out.println("*You (1) spit in his face and storm off, ending the date, or (2) say hi and keep the date going");
+                if (s.nextLine().equals("1")){
+                    System.out.println("*The date is now over*");
+                } else{
+                    
+                }
+            }
+            
         }
 
 
         c.clearScreen();
-        System.out.println("Congratulations! You have survived your date! \nNow its time for the entire purpose of the game!!!!!");
+        System.out.println("Congratulations! You have survived your date! \nNow its time for the entire purpose of the game!!!!!\n");
         int red = rfc();
         System.out.println(dateChris.printFlag());
         if (red == dateChris.printFlag()) {
@@ -280,17 +306,17 @@ public class Date {
                 System.out.println("That's wrong. Try again!");
                 red = rfc();
                 if (red == dateChris.printFlag()) {
-                guessFlags = true;
-                System.out.println("That's the correct number of red flags!");
-                newDate();
-                c.clearScreen();
+                    c.clearScreen();
+                    guessFlags = true;
+                    System.out.println("That's the correct number of red flags!");
+                    newDate();
                 }
             }
         }
 
     }
-public void dwG() {
-    Pause  pa = new Pause();
+    public void dwG() {
+        Pause  pa = new Pause();
         date.introduce();
         Scanner s = new Scanner(System.in);
         System.out.println("Hey where do you want to go eat? Applebee's or Olive Garden, im a little short on money.");
@@ -338,7 +364,7 @@ public void dwG() {
                     System.out.println("I think you'll get the salad. Looks like you need that");
                     dGertrude.addRedFlag(1);
             }
-            }
+        }
 
 
 
