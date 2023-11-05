@@ -58,6 +58,7 @@ public class Person
         return money;
     }
 
+    public int getAge() { return age; }
 
 
     public void addGreenFlag(int n)
