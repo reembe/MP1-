@@ -99,6 +99,7 @@ public class Date {
         c.clearScreen();
         System.out.println("On a scale of 1-10, how charismatic are you?");
         int rizz = s.nextInt();
+        s.nextLine();
         if (rizz >= 10) {
             System.out.println("Finally, someone worth our time!");
             pa.pauseTime(1500);
