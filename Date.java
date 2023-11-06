@@ -44,8 +44,18 @@ public class Date {
         return s.nextInt();
     }
 
+    
+    public int gfc() {
+        System.out.println("How many green flags have you spotted?");
+        return s.nextInt();
+    }
+
 
     public void newDate() {
+        date = new Person("Bartholemew", "Barty", 19, 100, "Brown", 2000, 0, 0);
+        dateChris =  new Person("Charizztopher", "Charizz", 17,0, "Blue", 50, 10.0, 0);
+        dGertrude = new Person("Gertrude", 21, 6, "green", 20, 0 );
+
         Clear c = new Clear();
         c.clearScreen();
         Scanner s = new Scanner(System.in);
@@ -101,29 +111,41 @@ public class Date {
         int rizz = s.nextInt();
         if (rizz >= 10) {
             System.out.println("Finally, someone worth our time!");
-            pa.pauseTime(1500);
-            c.clearScreen();
+            pa.pauseTime(1200);
+            
         }
-        System.out.println("Ok now, what color are your eyes?");
-        String eyes = s.nextLine();
+        
         c.clearScreen();
+
         System.out.println("How much money do you have?");
         int money = s.nextInt();
-        user = new Person(name, userAge, rizz, eyes, money, 0);
+
         c.clearScreen();
+
+        System.out.println("Okay now, what color are your eyes?");
+        String eyes = s.nextLine();
+        eyes = s.nextLine();
+
+        c.clearScreen();
+        
+        user = new Person(name, userAge, rizz, eyes, money, 0);
+    
     }
 
     public void dateWithBartholomew() {
+        Clear c = new Clear();
         System.out.println("\n Nice to meet you, " + user.getName() + ". My name is Bartholemew, but people call me Barty! Do you want to go on a museum date (1) or a restaurant date (2)?");
         Pause pa = new Pause();
         pa.pauseTime(2000);
         date.addGreenFlag(1);
         Scanner s = new Scanner(System.in);
         String whichDate = s.nextLine();
+        c.clearScreen();
         if (whichDate.equals("1")) {
             System.out.println("Wonderful, the museum is a great choice. And don't worry about the fees, enjoy your time. \nWould you like to get some food before we go?");
             date.addGreenFlag(1);
-            String food = s.nextLine();
+            String food = s.nextLine(); 
+            c.clearScreen();
             int groceries = 0;
             if (food.equals("sure") || food.equals("yes")) {
                 System.out.println("Alright, I'll get us 2 sandwiches and 2 drinks");
@@ -139,6 +161,7 @@ public class Date {
             groceries += 17;
             System.out.println("Are you ready?");
             String ready = s.nextLine();
+            c.clearScreen();
             if (ready.equals("yes")) {
                 System.out.println("Great, let's head out.");
             } else {
@@ -153,10 +176,12 @@ public class Date {
             System.out.println("So...do you have any favorite art piece you'd like to see?");
             Scanner q = new Scanner(System.in);
             String whichArt = s.nextLine();
+            c.clearScreen();
             System.out.println("Oh cool, that's such a significant art piece, i'd love to look at it with you. The " + whichArt + ".");
             System.out.println("*You and Bart go to your art piece and as the day goes on, you fall more and more in love with him*");
             System.out.println("*You and Bart finish the night on a high note. \n He gives you a warm hug (WITH CONSENT) and asks you \n \"Can I see you again beautiful\"");
             String response = s.nextLine();
+            c.clearScreen();
             if (response.equalsIgnoreCase("yes")) {
                 System.out.println("Bart smiles warmly and suggests another date to the aquarium. The evening ends and he sends you home in an Uber lux with a bouquet of fresh flowers.");
             } else if (response.equalsIgnoreCase("no")) {
@@ -173,12 +198,14 @@ public class Date {
         if (whichDate.equals("2")) {
             System.out.println("A restaurant date it is! I've heard there's a lovely Italian restaurant nearby. Would you like to go there?");
             String resturantDate = s.nextLine();
+            c.clearScreen();
             if (resturantDate.equals("yes")) {
                 System.out.println("*You walk there and once seated, Barty starts a conversation about your favorite Italian dishes.*");
                 System.out.println("*Throughout the meal, Bart continues to be charming and engaging, making the date enjoyable.*");
                 System.out.println("*After a delightful dinner, Barty insists on covering the bill.*");
                 System.out.println("It was a pleasure spending this evening with you. Can I see you again?");
                 String response = s.nextLine();
+                c.clearScreen();
                 if (response.equalsIgnoreCase("yes")) {
                     System.out.println("Bart smiles warmly and suggests another date to the aquarium. The evening ends and he sends you home in an Uber lux with a bouquet of fresh flowers.");
                 } else {
@@ -190,6 +217,28 @@ public class Date {
             } else {
                 System.out.println("No worries! We can choose another restaurant or activity. We can decide that next time we meet. Have a great night beautiful.");
             }
+             c.clearScreen();
+            System.out.println("Congratulations! You have survived your date! \nNow its time for the entire purpose of the game!!!!!\n");
+            int red = gfc();
+            System.out.println(date.printFlag());//delete this for the final code
+            if (red == date.printFlag()) {
+                c.clearScreen();
+                guessFlags = true;
+                System.out.println("That's the correct number of green flags!");
+                newDate();
+            } else {
+                while (!guessFlags) {
+                    c.clearScreen();
+                    System.out.println("That's wrong. Try again!");
+                    red = rfc();
+                    if (red == date.printFlag()) {
+                        c.clearScreen();
+                        guessFlags = true;
+                        System.out.println("That's the correct number of green flags!");
+                        newDate();
+                    }
+                }
+            }
         }
     }
 
@@ -197,7 +246,7 @@ public class Date {
         Pause pa = new Pause();
         Clear c = new Clear();
         c.clearScreen();
-        System.out.println("Nice to meet you, " + user.getName() + ". My name is Charizztopher, but people call me " + dateChris.getName().substring(3, 7) + "! \nDo you want to go on a picnic date(1) or an amusement park date(2)?");
+        System.out.println("Nice to meet you, " + user.getName() + ". My name is Charizztopher, but people call me " + dateChris.getName().substring(3, 7) + "! \nDo you want to go on a picnic date (1) or an amusement park date (2)?");
         dateChris.addRedFlag(1);
         Scanner date = new Scanner(System.in);
         String choice = date.nextLine();
@@ -215,12 +264,12 @@ public class Date {
                 System.out.println("Okay. I'll get 2 for myself then.");
                 dateChris.addGroceries(2);
             }
-            pa.pauseTime(1500);
+            pa.pauseTime(2000);
             c.clearScreen();
             System.out.println("\nI want lunchables, which is only 10 dollars! What a steal! \n\nooooh I want some chocolates, but it's 50 dollars omg. \nYou wouldn't mind paying, right? \n\nLol, why am I even asking? Of course, you wouldn't mind.");
             dateChris.addRedFlag(3);
             dateChris.addGroceries(10 + 50);
-            pa.pauseTime(3000);
+            pa.pauseTime(5000);
             c.clearScreen();
             System.out.println("Do we need any more food?");
             String needs = date.nextLine();
@@ -237,7 +286,7 @@ public class Date {
             }
             double lol = dateChris.total();
             lol *= 1.18;
-            pa.pauseTime(1500);
+            pa.pauseTime(2000);
             c.clearScreen();
             System.out.println("The total is " + lol + ". Thanks for paying for us babe! \nI had a feeling you were a generous person when I met you!");
             dateChris.addRedFlag(1);
@@ -332,170 +381,194 @@ public class Date {
 
         }
 
-    public void dwG() {
-        Pause pa = new Pause();
-        Clear c = new Clear();
-        if(user.getAge() < 18)
-        {
-            pa.pauseTime(2000);
-            System.out.println("Oh, I didn't know you were " + user.getAge() + ", its ok though, age is just a number.");
-            dGertrude.addRedFlag(1);
-        }
-        dGertrude.introduce();
-        Scanner s = new Scanner(System.in);
-        System.out.println("Hey where do you want to go eat? Applebee's or Olive Garden, im a little short on money.");
-        dGertrude.addRedFlag(1);
-        pa.pauseTime(2000);
-        System.out.print("(A) for Applebee's or (O) for Olive Garden: ");
-        String choice = s.nextLine();
-        switch (choice.toUpperCase()) {
-            case "A":
-                System.out.println("Isn't Applebee's for kids... whatever lets go.");
+        public void dwG() {
+            Pause pa = new Pause();
+            Clear c = new Clear();
+            if(user.getAge() < 18)
+            {
                 pa.pauseTime(2000);
-                c.clearScreen();
+                System.out.println("Oh, I didn't know you were " + user.getAge() + ", its ok though, age is just a number.");
                 dGertrude.addRedFlag(1);
-                break;
-            case "O":
-                System.out.println("Olive Garden it is! I love me a cheap Italian dinner.");
-                pa.pauseTime(2000);
-                c.clearScreen();
-                dGertrude.addRedFlag(1);
-                break;
-            default:
-                System.out.println("Ugh so indecisive...I'll pick Olive Garden then, since you cant decide.");
-                pa.pauseTime(2000);
-                dGertrude.addRedFlag(1);
-                c.clearScreen();
-                break;
-        }
-        if (choice.equals("A")) {
-            System.out.println("So what do you want to eat?");
-            System.out.println("(A) a salad (B) Sirloin steak (C) Chicken Tenders");
-            String food = s.nextLine();
-            switch(food.toUpperCase()){
-                case "A":
-                    c.clearScreen();
-                    System.out.println("Good choice, seems like you need it.");
-                    dGertrude.addRedFlag(1);
-                    break;
-                case "B":
-                    c.clearScreen();
-                    System.out.println("A steak? I hope you can afford that.");
-                    dGertrude.addRedFlag(1);
-                    break;
-                case "C":
-                    c.clearScreen();
-                    System.out.println("We're going out for dinner... can't you get something more appropriate and not embarrass me...");
-                    dGertrude.addRedFlag(1);
-                    break;
             }
-        }
-        else{
-            System.out.println("So what do you want to eat?");
-            System.out.println("(A) House Salad (B) Never Ending Pasta (C) Herb-Grilled Salmon ");
-            String food = s.nextLine();
-            switch (food.toUpperCase()) {
+            dGertrude.introduce();
+            Scanner s = new Scanner(System.in);
+            System.out.println("Hey where do you want to go eat? Applebee's or Olive Garden, im a little short on money.");
+            dGertrude.addRedFlag(1);
+            pa.pauseTime(2000);
+            System.out.print("(A) for Applebee's or (O) for Olive Garden: ");
+            String choice = s.nextLine();
+            switch (choice.toUpperCase()) {
                 case "A":
+                    System.out.println("Isn't Applebee's for kids... whatever lets go.");
+                    pa.pauseTime(2000);
                     c.clearScreen();
-                    System.out.println("Good choice, seems like you need it.");
                     dGertrude.addRedFlag(1);
                     break;
-                case "B":
+                case "O":
+                    System.out.println("Olive Garden it is! I love me a cheap Italian dinner.");
+                    pa.pauseTime(2000);
                     c.clearScreen();
-                    System.out.println("You're going to eat all of that?!");
-                    dGertrude.addRedFlag(1);
-                    break;
-                case "C":
-                    c.clearScreen();
-                    System.out.println("You chose Herb-Grilled Salmon.");
-                    System.out.println("You're paying the whole bill if you want to spend 30 dollars on that...");
                     dGertrude.addRedFlag(1);
                     break;
                 default:
+                    System.out.println("Ugh so indecisive...I'll pick Olive Garden then, since you cant decide.");
+                    pa.pauseTime(2000);
+                    dGertrude.addRedFlag(1);
                     c.clearScreen();
-                    System.out.println("I think you'll get the salad. Looks like you need that.");
+                    break;
+            }
+            if (choice.equals("A")) {
+                System.out.println("So what do you want to eat?");
+                System.out.println("(A) a salad (B) Sirloin steak (C) Chicken Tenders");
+                String food = s.nextLine();
+                switch(food.toUpperCase()){
+                    case "A":
+                        c.clearScreen();
+                        System.out.println("Good choice, seems like you need it.");
+                        dGertrude.addRedFlag(1);
+                        break;
+                    case "B":
+                        c.clearScreen();
+                        System.out.println("A steak? I hope you can afford that.");
+                        dGertrude.addRedFlag(1);
+                        break;
+                    case "C":
+                        c.clearScreen();
+                        System.out.println("We're going out for dinner... can't you get something more appropriate and not embarrass me...");
+                        dGertrude.addRedFlag(1);
+                        break;
+                }
+            }
+            else{
+                System.out.println("So what do you want to eat?");
+                System.out.println("(A) House Salad (B) Never Ending Pasta (C) Herb-Grilled Salmon ");
+                String food = s.nextLine();
+                switch (food.toUpperCase()) {
+                    case "A":
+                        c.clearScreen();
+                        System.out.println("Good choice, seems like you need it.");
+                        dGertrude.addRedFlag(1);
+                        break;
+                    case "B":
+                        c.clearScreen();
+                        System.out.println("You're going to eat all of that?!");
+                        dGertrude.addRedFlag(1);
+                        break;
+                    case "C":
+                        c.clearScreen();
+                        System.out.println("You chose Herb-Grilled Salmon.");
+                        System.out.println("You're paying the whole bill if you want to spend 30 dollars on that...");
+                        dGertrude.addRedFlag(1);
+                        break;
+                    default:
+                        c.clearScreen();
+                        System.out.println("I think you'll get the salad. Looks like you need that.");
+                        dGertrude.addRedFlag(1);
+                        break;
+                }
+            }
+            System.out.println("I'll get whatever is most expensive.");
+            dGertrude.addRedFlag(1);
+            System.out.println("*After the food has arrived*");
+            pa.pauseTime(2000);
+            c.clearScreen();
+            System.out.println("So, let's talk about me. I'm amazing. What do you think about me?");
+            pa.pauseTime(2000);
+            dGertrude.addRedFlag(1);
+            c.clearScreen();
+            System.out.println("(A) You are amazing....ly annoying. (B) I've always wanted to meet someone who's humble enough to admit that. (C) You seem like a nice person.");
+            pa.pauseTime(2000);
+            String amz = s.nextLine();
+            switch (amz.toUpperCase()) {
+                case "A":
+                    c.clearScreen();
+                    System.out.println("Of course small-minded people would say that.");
+                    pa.pauseTime(2000);
+                    dGertrude.addRedFlag(1);
+                    break;
+                case "B":
+                    c.clearScreen();
+                    System.out.println("I know right, I'm such a humble and kind person.");
+                    pa.pauseTime(2000);
+                    dGertrude.addRedFlag(1);
+                    break;
+                case "C":
+                    c.clearScreen();
+                    System.out.println("Omg, thank youu!!");
+                    pa.pauseTime(2000);
+                    break;
+                default:
+                    c.clearScreen();
+                    System.out.println("*Ignores what you said*");
+                    pa.pauseTime(2000);
                     dGertrude.addRedFlag(1);
                     break;
             }
-        }
-        System.out.println("I'll get whatever is most expensive.");
-        dGertrude.addRedFlag(1);
-        System.out.println("*After the food has arrived*");
-        pa.pauseTime(2000);
-        c.clearScreen();
-        System.out.println("So, let's talk about me. I'm amazing. What do you think about me?");
-        pa.pauseTime(2000);
-        dGertrude.addRedFlag(1);
-        c.clearScreen();
-        System.out.println("(A) You are amazing....ly annoying. (B) I've always wanted to meet someone who's humble enough to admit that. (C) You seem like a nice person.");
-        pa.pauseTime(2000);
-        String amz = s.nextLine();
-        switch (amz.toUpperCase()) {
-            case "A":
-                c.clearScreen();
-                System.out.println("Of course small-minded people would say that.");
-                pa.pauseTime(2000);
-                dGertrude.addRedFlag(1);
-                break;
-            case "B":
-                c.clearScreen();
-                System.out.println("I know right, I'm such a humble and kind person.");
-                pa.pauseTime(2000);
-                dGertrude.addRedFlag(1);
-                break;
-            case "C":
-                c.clearScreen();
-                System.out.println("Omg, thank youu!!");
-                pa.pauseTime(2000);
-                break;
-            default:
-                c.clearScreen();
-                System.out.println("*Ignores what you said*");
-                pa.pauseTime(2000);
-                dGertrude.addRedFlag(1);
-                break;
-        }
-        c.clearScreen();
-        System.out.println("Sorry, can we make this quick. I have another date in 2 hours.");
-        pa.pauseTime(2000);
-        dGertrude.addRedFlag(1);
-        System.out.println("(A) Excuse me?. (B) Me too!");
-        String yn = s.nextLine();
-        if (yn.equalsIgnoreCase("A")) {
             c.clearScreen();
-            System.out.println("Damn, sorry, can you not take a joke? Just ignore what I said...");
+            System.out.println("Sorry, can we make this quick. I have another date in 2 hours.");
             pa.pauseTime(2000);
             dGertrude.addRedFlag(1);
-        } else if (yn.equalsIgnoreCase("B")) {
+            System.out.println("(A) Excuse me?. (B) Me too!");
+            String yn = s.nextLine();
+            if (yn.equalsIgnoreCase("A")) {
+                c.clearScreen();
+                System.out.println("Damn, sorry, can you not take a joke? Just ignore what I said...");
+                pa.pauseTime(2000);
+                dGertrude.addRedFlag(1);
+            } else if (yn.equalsIgnoreCase("B")) {
+                c.clearScreen();
+                System.out.println("Umm.. What did you just say? You can't be doing that to me??");
+                pa.pauseTime(2000);
+                System.out.println("What type of person are you to say that to someone you're on a date with??");
+                pa.pauseTime(2000);
+                System.out.println("You're such an annoying person.");
+                pa.pauseTime(2000);
+                dGertrude.addRedFlag(3);
+            }
             c.clearScreen();
-            System.out.println("Umm.. What did you just say? You can't be doing that to me??");
+            System.out.println("Whatever, besides you don't seem like a very fun person.\nDo you even do anything with your life?");
             pa.pauseTime(2000);
-            System.out.println("What type of person are you to say that to someone you're on a date with??");
-            pa.pauseTime(2000);
-            System.out.println("You're such an annoying person.");
-            pa.pauseTime(2000);
-            dGertrude.addRedFlag(3);
+            dGertrude.addRedFlag(1);
+            System.out.println("(A) Of course I do fun things, it just happens to be that you're not fun. (B) Umm yea...");
+            String reply = s.nextLine();
+            
+            switch(reply.toUpperCase()){
+                case "A":
+                    pa.pauseTime(2000);
+                    c.clearScreen();
+                    System.out.println("Wow, you're so rude I cant believe im on a date with you right now, im leaving.");
+                    dGertrude.addRedFlag(1);
+                    break;
+                case "B":
+                    pa.pauseTime(2000);
+                    c.clearScreen();
+                    System.out.println("Sure, you sound real enthusiastic about it.\n I don't know why im even on a date with such a boring person like you, i'm leaving.");
+                    dGertrude.addRedFlag(1);
+                    break;
+            }
+             c.clearScreen();
+            System.out.println("Congratulations! You have survived your date! \nNow its time for the entire purpose of the game!!!!!\n");
+            int red = rfc();
+            System.out.println(dateChris.printFlag());//delete this for the final code
+            if (red == dateChris.printFlag()) {
+                c.clearScreen();
+                guessFlags = true;
+                System.out.println("That's the correct number of red flags!");
+                newDate();
+            } else {
+                while (!guessFlags) {
+                    c.clearScreen();
+                    System.out.println("That's wrong. Try again!");
+                    red = rfc();
+                    if (red == dateChris.printFlag()) {
+                        c.clearScreen();
+                        guessFlags = true;
+                        System.out.println("That's the correct number of red flags!");
+                        newDate();
+                    }
+                }
+            }
         }
-        c.clearScreen();
-        System.out.println("Whatever, besides you don't seem like a very fun person.\nDo you even do anything with your life?");
-        pa.pauseTime(2000);
-        dGertrude.addRedFlag(1);
-        System.out.println("(A) Of course I do fun things, it just happens to be that you're not fun. (B) Umm yea...");
-        String reply = s.nextLine();
         
-        switch(reply.toUpperCase()){
-            case "A":
-                pa.pauseTime(2000);
-                c.clearScreen();
-                System.out.println("Wow, you're so rude I cant believe im on a date with you right now, im leaving.");
-                dGertrude.addRedFlag(1);
-                break;
-            case "B":
-                pa.pauseTime(2000);
-                c.clearScreen();
-                System.out.println("Sure, you sound real enthusiastic about it.\n I don't know why im even on a date with such a boring person like you, i'm leaving.");
-                dGertrude.addRedFlag(1);
-                break;
-        }
-    }
+    
 }
