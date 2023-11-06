@@ -86,6 +86,7 @@ public class Game {
             System.out.println(GREEN + " 2) Bertholomew" + RESETTER);
             System.out.println(MAGENTA + " 3) Gertrude" + RESETTER);
             System.out.println(YELLOW + " 4) Quit Game" + RESETTER);
+            System.out.println(CYAN + " 5) ???" + RESETTER);
             System.out.println("(enter the corresponding number)");
             System.out.println("  ");
             int choice = menuTry();
@@ -104,6 +105,23 @@ public class Game {
                 c.clearScreen();
             } else if (choice == 4){
                 menuOption = true;
+            } else if(choice == 5)
+            {
+                c.clearScreen();
+
+
+            System.out.println(MAGENTA +"  ▀█████████▄     ▄████████      ███▄▄▄▄    ▄██████▄   ▄█     █▄     ");  
+            System.out.println("   ███    ███   ███    ███      ███▀▀▀██▄ ███    ███ ███     ███   ");   
+            System.out.println("   ███    ███   ███    █▀       ███   ███ ███    ███ ███     ███   ");   
+            System.out.println("  ▄███▄▄▄██▀   ▄███▄▄▄          ███   ███ ███    ███ ███     ███   ");   
+            System.out.println(" ▀▀███▀▀▀██▄  ▀▀███▀▀▀          ███   ███ ███    ███ ███     ███   ");  
+            System.out.println("   ███    ██▄   ███    █▄       ███   ███ ███    ███ ███     ███   ");   
+            System.out.println("   ███    ███   ███    ███      ███   ███ ███    ███ ███ ▄█▄ ███  ");    
+            System.out.println("   ▄█████████▀    ██████████      ▀█   █▀   ▀██████▀   ▀███▀███▀     ███ " + RESETTER);    
+                                                                                   
+               pa.pauseTime(2000);
+                System.out.println(" ");
+                c.clearScreen();
             } else {
                 c.clearScreen();
                 System.out.println(" ");
