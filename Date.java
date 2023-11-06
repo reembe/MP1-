@@ -33,9 +33,22 @@ public class Date {
     boolean anotherDate = false;
     boolean guessFlags = false;
 
-    public void printObject()
+    public void fufillingRequirements()
     {
         System.out.print(dateChris);
+        System.out.print(dateChris.toString());
+        Integer n = new Integer(7);
+        System.out.print(n);
+        n ++;
+        int numberzzz = 5 * 4 / 3;
+        double num_why_not = 10.0;
+        num_why_not = (int)num_why_not;
+        double more_useles_numbers = 10.7;
+        more_useles_numbers = (int)(more_useles_numbers + 0.5);
+        int max = Integer.MAX_VALUE;
+        System.out.println(max);
+
+
     }
 
 
