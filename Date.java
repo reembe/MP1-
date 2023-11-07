@@ -183,10 +183,10 @@ public class Date {
                 date.addGreenFlag(1);
             }
             groceries = (int) (Math.round(groceries * 10) / 10);
-            System.out.println("\n The total is " + groceries + ". That's much less than I expected.");
+            System.out.println("\n The total is $" + groceries + ". That's much less than I expected.");
             date.addGreenFlag(2);
             System.out.println("*You and Bart have arrived at the museum, and he pays for both of your entrance fees*");
-            System.out.println("So...do you have any favorite art piece you'd like to see?");
+            System.out.println("So...do you have any favorite art piece you'd like to see? (write art piece name)");
             Scanner q = new Scanner(System.in);
             String whichArt = s.nextLine();
             c.clearScreen();
@@ -217,6 +217,11 @@ public class Date {
                 System.out.println("*Throughout the meal, Bart continues to be charming and engaging, making the date enjoyable.*");
                 System.out.println("*After a delightful dinner, Barty insists on covering the bill.*");
                 System.out.println("It was a pleasure spending this evening with you. Can I see you again?");
+            } else {
+                System.out.println("Its quite late right now my dear, I think this is the only spot open");
+                System.out.println("Lets head to the Italian restaurant, everything one me of course.");
+
+            }
                 String response = s.nextLine();
                 c.clearScreen();
                 if (response.equalsIgnoreCase("yes")) {
