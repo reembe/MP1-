@@ -70,6 +70,7 @@ public class Game {
         Clear c = new Clear();
 
         while (!menuOption) {
+            System.out.println("Welcome to -");
             System.out.println(RED + "███▀███   █    ██  ███▄    █  ▐██▌");
             System.out.println("▓██ ▒ ██▒ ██  ▓██▒ ██ ▀█   █  ▐██▌");
             System.out.println("▓██ ░▄█ ▒▓██  ▒██░▓██  ▀█ ██▒ ▐██▌");
@@ -80,6 +81,9 @@ public class Game {
             System.out.println("░░   ░  ░░░ ░ ░    ░   ░ ░     ░");
             System.out.println(" ░        ░              ░  ░" + RESETTER);
             System.out.println("  ");
+            System.out.println("The game where you learn to identify \n" + RED +"red " + RESETTER + "(or " + GREEN + "green" + RESETTER+ ") flags in different people \n(and learn how to run away from them)!");
+            System.out.println("  ");
+
 
             System.out.println("Please Select Your Storyline:");
             System.out.println(BLUE + " 1) Charizztopher" + RESETTER);
@@ -117,7 +121,12 @@ public class Game {
             System.out.println(" ▀▀███▀▀▀██▄  ▀▀███▀▀▀          ███   ███ ███    ███ ███     ███   ");  
             System.out.println("   ███    ██▄   ███    █▄       ███   ███ ███    ███ ███     ███   ");   
             System.out.println("   ███    ███   ███    ███      ███   ███ ███    ███ ███ ▄█▄ ███  ");    
-            System.out.println("   ▄█████████▀    ██████████      ▀█   █▀   ▀██████▀   ▀███▀███▀     ███ " + RESETTER);    
+            System.out.println("   ▄█████████▀    ██████████      ▀█   █▀   ▀██████▀   ▀███▀███▀     ███ " + RESETTER);  
+            System.out.println("");
+
+            d.fufillingRequirements();
+
+            
                                                                                    
                pa.pauseTime(2000);
                 System.out.println(" ");
