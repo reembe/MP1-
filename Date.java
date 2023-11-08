@@ -35,18 +35,31 @@ public class Date {
 
     public void fufillingRequirements()
     {
-        System.out.print(dateChris);
-        System.out.print(dateChris.toString());
-        Integer n = new Integer(7);
-        System.out.print(n);
-        n ++;
+        System.out.println("below is extra stuff to fufil requirements !!");
+        System.out.println(dateChris);
         int numberzzz = 5 * 4 / 3;
+        System.out.println(numberzzz);
         double num_why_not = 10.0;
         num_why_not = (int)num_why_not;
+        System.out.println(num_why_not);
+        int zzyy = (int)(5.6 / 3);
+        System.out.println(zzyy);
         double more_useles_numbers = 10.7;
         more_useles_numbers = (int)(more_useles_numbers + 0.5);
         int max = Integer.MAX_VALUE;
+        System.out.println(more_useles_numbers);
         System.out.println(max);
+        int more_numbers = Math.abs(-10);
+        System.out.println(more_numbers);
+        String apple = "apple";
+        apple += more_numbers + apple;
+        System.out.println(dateChris.toString());
+        Integer n = new Integer(7);
+        System.out.println(n);
+        n++;
+        System.out.println(n);
+        Clear.clearScreen();
+        
 
 
     }
@@ -183,10 +196,10 @@ public class Date {
                 date.addGreenFlag(1);
             }
             groceries = (int) (Math.round(groceries * 10) / 10);
-            System.out.println("\n The total is $" + groceries + ". That's much less than I expected.");
+            System.out.println("\n The total is " + groceries + ". That's much less than I expected.");
             date.addGreenFlag(2);
             System.out.println("*You and Bart have arrived at the museum, and he pays for both of your entrance fees*");
-            System.out.println("So...do you have any favorite art piece you'd like to see? (write art piece name)");
+            System.out.println("So...do you have any favorite art piece you'd like to see?");
             Scanner q = new Scanner(System.in);
             String whichArt = s.nextLine();
             c.clearScreen();
@@ -217,11 +230,6 @@ public class Date {
                 System.out.println("*Throughout the meal, Bart continues to be charming and engaging, making the date enjoyable.*");
                 System.out.println("*After a delightful dinner, Barty insists on covering the bill.*");
                 System.out.println("It was a pleasure spending this evening with you. Can I see you again?");
-            } else {
-                System.out.println("Its quite late right now my dear, I think this is the only spot open");
-                System.out.println("Lets head to the Italian restaurant, everything one me of course.");
-
-            }
                 String response = s.nextLine();
                 c.clearScreen();
                 if (response.equalsIgnoreCase("yes")) {
@@ -239,7 +247,7 @@ public class Date {
             System.out.println("Congratulations! You have survived your date! \nNow its time for the entire purpose of the game!!!!!\n");
             int red = gfc();
             System.out.println(date.printFlag());//delete this for the final code
-            if (red == date.printFlag()) {
+            if (red == date.printGFlag()) {
                 c.clearScreen();
                 guessFlags = true;
                 System.out.println("That's the correct number of green flags!");
@@ -249,7 +257,7 @@ public class Date {
                     c.clearScreen();
                     System.out.println("That's wrong. Try again!");
                     red = rfc();
-                    if (red == date.printFlag()) {
+                    if (red == date.printGFlag()) {
                         c.clearScreen();
                         guessFlags = true;
                         System.out.println("That's the correct number of green flags!");
@@ -322,7 +330,7 @@ public class Date {
                 System.out.println("Ok cutie patoots! I'll call you later pook.");
                 dateChris.addRedFlag(2);
             }
-            pa.pauseTime(1500);
+            pa.pauseTime(2000);
 
 
         } else if (choice.equals("2")) {
@@ -344,6 +352,7 @@ public class Date {
                 System.out.println("*You tell him that he was screaming the whole time*");
                 System.out.println("Am I not allowed to yell because I'm a man? what kind of sexist b**** did I agree to go on a date with omg. Anyways. i just saw my high school sweet heart so I'm gonna go talk to her and actually have a good time.");
                 dateChris.addRedFlag(3);
+                pa.pauseTime(2000);
             } else {
                 System.out.println("Go stand on line I'm going to go to the bathroom.");
                 pa.pauseTime(2000);
@@ -382,6 +391,7 @@ public class Date {
                 c.clearScreen();
                 guessFlags = true;
                 System.out.println("That's the correct number of red flags!");
+                pa.pauseTime(2000);   
                 newDate();
             } else {
                 while (!guessFlags) {
@@ -392,6 +402,7 @@ public class Date {
                         c.clearScreen();
                         guessFlags = true;
                         System.out.println("That's the correct number of red flags!");
+                        pa.pauseTime(2000);
                         newDate();
                     }
                 }
