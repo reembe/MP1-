@@ -24,7 +24,7 @@ public class Date {
     private String YELLOW_B = "\u001B[43m";
     private String BLUE_B = "\u001B[44m";
     private String CYAN_B = "\u001B[46m";
-    final String MAGENTA_B = "\u001B[45m";
+    private final String MAGENTA_B = "\u001B[45m";
     private String WHITE_B = "\u001B[47m";
     private String BLACK_B = "\u001B[40m";
 
@@ -58,7 +58,7 @@ public class Date {
         System.out.println(n);
         n++;
         System.out.println(n);
-        Clear.clearScreen();
+        // Clear.clearScreen();
     
         
 
@@ -124,16 +124,16 @@ public class Date {
 
     public void askInfo() {
         Pause pa = new Pause();
-        Clear c = new Clear();
+        
         System.out.println("Welcome!");
         System.out.println("  ");
         System.out.println("Hello! What is your name?");
         Scanner s = new Scanner(System.in);
         String name = s.nextLine();
-        c.clearScreen();
+        Clear.clearScreen();
         System.out.println("Hello " + name + ". How old are you?");
         int userAge = s.nextInt();
-        c.clearScreen();
+        Clear.clearScreen();
         System.out.println("On a scale of 1-10, how charismatic are you?");
         int rizz = s.nextInt();
         if (rizz >= 10) {
@@ -142,18 +142,18 @@ public class Date {
             
         }
         
-        c.clearScreen();
+        Clear.clearScreen();
 
         System.out.println("How much money do you have?");
         int money = s.nextInt();
 
-        c.clearScreen();
+        Clear.clearScreen();
 
         System.out.println("Okay now, what color are your eyes?");
         String eyes = s.nextLine();
         eyes = s.nextLine();
 
-        c.clearScreen();
+        Clear.clearScreen();
         
         user = new Person(name, userAge, rizz, eyes, money, 0);
     
@@ -170,7 +170,7 @@ public class Date {
         c.clearScreen();
         if (whichDate.equals("1")) {
             System.out.println("Wonderful, the museum is a great choice. And don't worry about the fees, enjoy your time. \nWould you like to get some food before we go?");
-            date.addGreenFlag(1);
+            date.addGreenFlag(7);
             String food = s.nextLine(); 
             c.clearScreen();
             int groceries = 0;
@@ -192,7 +192,7 @@ public class Date {
             if (ready.equals("yes")) {
                 System.out.println("Great, let's head out.");
             } else {
-                s.nextLine();
+                
                 System.out.println("I'll wait, take your time.");
                 date.addGreenFlag(1);
             }
@@ -504,86 +504,87 @@ public class Date {
             System.out.println("I'll get whatever is most expensive.");
             dGertrude.addRedFlag(1);
             System.out.println("*After the food has arrived*");
-            pa.pauseTime(2000);
+            pa.pauseTime(5000);
             c.clearScreen();
             System.out.println("So, let's talk about me. I'm amazing. What do you think about me?");
-            pa.pauseTime(2000);
+            pa.pauseTime(5000);
             dGertrude.addRedFlag(1);
             c.clearScreen();
             System.out.println("(A) You are amazing....ly annoying. (B) I've always wanted to meet someone who's humble enough to admit that. (C) You seem like a nice person.");
-            pa.pauseTime(2000);
+            pa.pauseTime(5000);
             String amz = s.nextLine();
             switch (amz.toUpperCase()) {
                 case "A":
                     c.clearScreen();
                     System.out.println("Of course small-minded people would say that.");
-                    pa.pauseTime(2000);
+                    pa.pauseTime(4000);
                     dGertrude.addRedFlag(1);
                     break;
                 case "B":
                     c.clearScreen();
                     System.out.println("I know right, I'm such a humble and kind person.");
-                    pa.pauseTime(2000);
+                    pa.pauseTime(4000);
                     dGertrude.addRedFlag(1);
                     break;
                 case "C":
                     c.clearScreen();
                     System.out.println("Omg, thank youu!!");
-                    pa.pauseTime(2000);
+                    pa.pauseTime(3000);
                     break;
                 default:
                     c.clearScreen();
                     System.out.println("*Ignores what you said*");
-                    pa.pauseTime(2000);
+                    pa.pauseTime(3000);
                     dGertrude.addRedFlag(1);
                     break;
             }
             c.clearScreen();
             System.out.println("Sorry, can we make this quick. I have another date in 2 hours.");
-            pa.pauseTime(2000);
+            pa.pauseTime(5000);
             dGertrude.addRedFlag(1);
             System.out.println("(A) Excuse me?. (B) Me too!");
             String yn = s.nextLine();
             if (yn.equalsIgnoreCase("A")) {
                 c.clearScreen();
                 System.out.println("Damn, sorry, can you not take a joke? Just ignore what I said...");
-                pa.pauseTime(2000);
+                pa.pauseTime(5000);
                 dGertrude.addRedFlag(1);
             } else if (yn.equalsIgnoreCase("B")) {
                 c.clearScreen();
                 System.out.println("Umm.. What did you just say? You can't be doing that to me??");
-                pa.pauseTime(2000);
+                pa.pauseTime(5000);
                 System.out.println("What type of person are you to say that to someone you're on a date with??");
-                pa.pauseTime(2000);
+                pa.pauseTime(5000);
                 System.out.println("You're such an annoying person.");
-                pa.pauseTime(2000);
+                pa.pauseTime(5000);
                 dGertrude.addRedFlag(3);
             }
             c.clearScreen();
             System.out.println("Whatever, besides you don't seem like a very fun person.\nDo you even do anything with your life?");
-            pa.pauseTime(2000);
+            pa.pauseTime(4000);
             dGertrude.addRedFlag(1);
             System.out.println("(A) Of course I do fun things, it just happens to be that you're not fun. (B) Umm yea...");
             String reply = s.nextLine();
             
             switch(reply.toUpperCase()){
                 case "A":
-                    pa.pauseTime(2000);
+                    pa.pauseTime(4000);
                     c.clearScreen();
                     System.out.println("Wow, you're so rude I cant believe im on a date with you right now, im leaving.");
                     dGertrude.addRedFlag(1);
                     break;
                 case "B":
-                    pa.pauseTime(2000);
+                    pa.pauseTime(4000);
                     c.clearScreen();
                     System.out.println("Sure, you sound real enthusiastic about it.\n I don't know why im even on a date with such a boring person like you, i'm leaving.");
                     dGertrude.addRedFlag(1);
                     break;
             }
+            pa.pauseTime(4000);
              c.clearScreen();
             System.out.println("Congratulations! You have survived your date! \nNow its time for the entire purpose of the game!!!!!\n");
             int red = rfc();
-            System.out.println(dGertrude.printFlag());//delete this for the final code
+            
             if (red == dGertrude.printFlag()) {
                 c.clearScreen();
                 guessFlags = true;
