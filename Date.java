@@ -207,10 +207,12 @@ public class Date {
             System.out.println("Oh cool, that's such a significant art piece, i'd love to look at it with you. The " + whichArt + ".");
             System.out.println("*You and Bart go to your art piece and as the day goes on, you fall more and more in love with him*");
             System.out.println("*You and Bart finish the night on a high note. \n He gives you a warm hug (WITH CONSENT) and asks you \n \"Can I see you again beautiful\"");
+            date.addGreenFlag(3);
             String response = s.nextLine();
             c.clearScreen();
             if (response.equalsIgnoreCase("yes")) {
                 System.out.println("Bart smiles warmly and suggests another date to the aquarium. The evening ends and he sends you home in an Uber lux with a bouquet of fresh flowers.");
+                date.addGreenFlag(1);
             } else if (response.equalsIgnoreCase("no")) {
                 {
                     System.out.println("I understand. It was lovely meeting you. Take care.");
@@ -240,33 +242,35 @@ public class Date {
                     System.out.println("Bart smiles warmly and sends you home in an Uber lux.");
 
 
-                }
-            } else {
-                System.out.println("No worries! We can choose another restaurant or activity. We can decide that next time we meet. Have a great night beautiful.");
+                }} else {
+                System.out.println("No worries! We can choose another restaurant or activity. We can decide that next time we meet. Have a great night beautiful.");}
+  
+        
             }
-             c.clearScreen();
+            Pause.pauseTime(2000);
+            Clear.clearScreen();
             System.out.println("Congratulations! You have survived your date! \nNow its time for the entire purpose of the game!!!!!\n");
             int red = gfc();
-            System.out.println(date.printFlag());//delete this for the final code
             if (red == date.printGFlag()) {
                 c.clearScreen();
                 guessFlags = true;
-                System.out.println("That's the correct number of green flags!");
+                System.out.println("That's the correct number of red flags!");
+                Pause.pauseTime(1500);
                 newDate();
             } else {
                 while (!guessFlags) {
                     c.clearScreen();
                     System.out.println("That's wrong. Try again!");
-                    red = rfc();
+                    red = gfc();
                     if (red == date.printGFlag()) {
                         c.clearScreen();
                         guessFlags = true;
-                        System.out.println("That's the correct number of green flags!");
+                        System.out.println("That's the correct number of red flags!");
+                        Pause.pauseTime(1500);
                         newDate();
                     }
                 }
             }
-        }
     }
 
     public void dwC() {
@@ -392,7 +396,7 @@ public class Date {
                 c.clearScreen();
                 guessFlags = true;
                 System.out.println("That's the correct number of red flags!");
-                pa.pauseTime(2000);   
+                pa.pauseTime(1500);   
                 newDate();
             } else {
                 while (!guessFlags) {
@@ -403,7 +407,7 @@ public class Date {
                         c.clearScreen();
                         guessFlags = true;
                         System.out.println("That's the correct number of red flags!");
-                        pa.pauseTime(2000);
+                        pa.pauseTime(1500);
                         newDate();
                     }
                 }
@@ -579,21 +583,23 @@ public class Date {
              c.clearScreen();
             System.out.println("Congratulations! You have survived your date! \nNow its time for the entire purpose of the game!!!!!\n");
             int red = rfc();
-            System.out.println(dateChris.printFlag());//delete this for the final code
-            if (red == dateChris.printFlag()) {
+            System.out.println(dGertrude.printFlag());//delete this for the final code
+            if (red == dGertrude.printFlag()) {
                 c.clearScreen();
                 guessFlags = true;
                 System.out.println("That's the correct number of red flags!");
+                Pause.pauseTime(1500);
                 newDate();
             } else {
                 while (!guessFlags) {
                     c.clearScreen();
                     System.out.println("That's wrong. Try again!");
                     red = rfc();
-                    if (red == dateChris.printFlag()) {
+                    if (red == dGertrude.printFlag()) {
                         c.clearScreen();
                         guessFlags = true;
                         System.out.println("That's the correct number of red flags!");
+                        Pause.pauseTime(1500);
                         newDate();
                     }
                 }
