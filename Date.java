@@ -59,6 +59,7 @@ public class Date {
         n++;
         System.out.println(n);
         Clear.clearScreen();
+    
         
 
 
