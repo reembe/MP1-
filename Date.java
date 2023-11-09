@@ -35,7 +35,7 @@ public class Date {
 
     public void fufillingRequirements()
     {
-        System.out.println("below is extra stuff to fufil requirements !!");
+        System.out.println("below is extra stuff to fulfill requirements !!");
         System.out.println(dateChris);
         int numberzzz = 5 * 4 / 3;
         System.out.println(numberzzz);
