@@ -265,7 +265,7 @@ public class Date {
                     if (red == date.printGFlag()) {
                         c.clearScreen();
                         guessFlags = true;
-                        System.out.println("That's the correct number of red flags!");
+                        System.out.println("That's the correct number of green flags!");
                         Pause.pauseTime(1500);
                         newDate();
                     }
@@ -406,7 +406,6 @@ public class Date {
             c.clearScreen();
             System.out.println("Congratulations! You have survived your date! \nNow its time for the entire purpose of the game!!!!!\n");
             int red = rfc();
-            System.out.println(dateChris.printFlag());//delete this for the final code
             if (red == dateChris.printFlag()) {
                 c.clearScreen();
                 guessFlags = true;
