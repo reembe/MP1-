@@ -11,6 +11,16 @@ public class Person
     private int redFlags;
 
 
+        public String toString()
+    {
+        return 
+        "Name: " + name + "\n" +
+        "Age: " + age + "\n" + 
+        "Rizz: " + charisma;
+
+    }
+
+
     public Person(String n, String l, int a, int c, String e, int m, double g, int r)
     {
         name = n;
