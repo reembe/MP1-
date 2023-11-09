@@ -7,26 +7,26 @@ public class Date {
     private Person dateChris = new Person("Charizztopher", "Charizz", 17,0, "Blue", 50, 10.0, 0);
     private Person dGertrude = new Person("Gertrude", 21, 6, "green", 20, 0 );
 
-    private String RESETTER = "\u001B[0m";
+    private final String RESETTER = "\u001B[0m";
 
-    private String RED = "\u001B[31m";
-    private String GREEN = "\u001B[32m";
-    private String YELLOW = "\u001B[33m";
-    private String BLUE = "\u001B[34m";
-    private String CYAN = "\u001B[36m";
-    private String MAGENTA = "\u001B[35m";
-    private String WHITE = "\u001B[37m";
-    private String BLACK = "\u001B[30m";
+    private final String RED = "\u001B[31m";
+    private final String GREEN = "\u001B[32m";
+    private final String YELLOW = "\u001B[33m";
+    private final String BLUE = "\u001B[34m";
+    private final String CYAN = "\u001B[36m";
+    private final String MAGENTA = "\u001B[35m";
+    private final String WHITE = "\u001B[37m";
+    private final String BLACK = "\u001B[30m";
 
 
-    private String RED_B = "\u001B[41m";
-    private String GREEN_B = "\u001B[42m";
-    private String YELLOW_B = "\u001B[43m";
-    private String BLUE_B = "\u001B[44m";
-    private String CYAN_B = "\u001B[46m";
+    private final String RED_B = "\u001B[41m";
+    private final String GREEN_B = "\u001B[42m";
+    private final String YELLOW_B = "\u001B[43m";
+    private final String BLUE_B = "\u001B[44m";
+    private final String CYAN_B = "\u001B[46m";
     private final String MAGENTA_B = "\u001B[45m";
-    private String WHITE_B = "\u001B[47m";
-    private String BLACK_B = "\u001B[40m";
+    private final String WHITE_B = "\u001B[47m";
+    private final String BLACK_B = "\u001B[40m";
 
     private Scanner s = new Scanner(System.in);
     int red;
