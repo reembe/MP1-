@@ -59,8 +59,7 @@ public class Date {
         n++;
         System.out.println(n);
         
-    
-        
+
 
 
     }
@@ -227,6 +226,7 @@ public class Date {
         if (whichDate.equals("2")) {
             System.out.println("A restaurant date it is! I've heard there's a lovely Italian restaurant nearby. Would you like to go there?");
             String resturantDate = s.nextLine();
+            date.addGreenFlag(7);
             c.clearScreen();
             if (resturantDate.equals("yes")) {
                 System.out.println("*You walk there and once seated, Barty starts a conversation about your favorite Italian dishes.*");
@@ -247,7 +247,7 @@ public class Date {
   
         
             }
-            Pause.pauseTime(2000);
+            Pause.pauseTime(3000);
             Clear.clearScreen();
             System.out.println("Congratulations! You have survived your date! \nNow its time for the entire purpose of the game!!!!!\n");
             int red = gfc();
@@ -402,6 +402,7 @@ public class Date {
             }
 
         }
+            pa.pauseTime(2000); 
             c.clearScreen();
             System.out.println("Congratulations! You have survived your date! \nNow its time for the entire purpose of the game!!!!!\n");
             int red = rfc();
@@ -521,7 +522,7 @@ public class Date {
         pa.pauseTime(1000);
         c.clearScreen();
         System.out.println("So, let's talk about me. I'm amazing. What do you think about me?");
-        pa.pauseTime(1000);
+        pa.pauseTime(2000);
         dGertrude.addRedFlag(1);
         c.clearScreen();
         System.out.println("(A) You are amazing....ly annoying. (B) I've always wanted to meet someone who's humble enough to admit that. (C) You seem like a nice person.");
@@ -531,13 +532,13 @@ public class Date {
             case "A":
                 c.clearScreen();
                 System.out.println("Of course small-minded people would say that.");
-                pa.pauseTime(1000);
+                pa.pauseTime(2000);
                 dGertrude.addRedFlag(1);
                 break;
             case "B":
                 c.clearScreen();
                 System.out.println("I know right, I'm such a humble and kind person.");
-                pa.pauseTime(1000);
+                pa.pauseTime(2000);
                 dGertrude.addRedFlag(1);
                 break;
             case "C":
@@ -561,21 +562,21 @@ public class Date {
         if (yn.equalsIgnoreCase("A")) {
             c.clearScreen();
             System.out.println("Damn, sorry, can you not take a joke? Just ignore what I said...");
-            pa.pauseTime(1000);
+            pa.pauseTime(2300);
             dGertrude.addRedFlag(1);
         } else if (yn.equalsIgnoreCase("B")) {
             c.clearScreen();
             System.out.println("Umm.. What did you just say? You can't be doing that to me??");
-            pa.pauseTime(1000);
+            pa.pauseTime(2500);
             System.out.println("What type of person are you to say that to someone you're on a date with??");
-            pa.pauseTime(1000);
+            pa.pauseTime(2500);
             System.out.println("You're such an annoying person.");
-            pa.pauseTime(1000);
+            pa.pauseTime(1500);
             dGertrude.addRedFlag(3);
         }
         c.clearScreen();
         System.out.println("Whatever, besides you don't seem like a very fun person.\nDo you even do anything with your life?");
-        pa.pauseTime(1000);
+        pa.pauseTime(2500);
         dGertrude.addRedFlag(1);
         System.out.println("(A) Of course I do fun things, it just happens to be that you're not fun. (B) Umm yea...");
         String reply = s.nextLine();
@@ -594,7 +595,7 @@ public class Date {
                 dGertrude.addRedFlag(1);
                 break;
         }
-        pa.pauseTime(1000);
+        pa.pauseTime(3500);
         c.clearScreen();
         System.out.println("Congratulations! You have survived your date! \nNow its time for the entire purpose of the game!!!!!\n");
         int red = rfc();
